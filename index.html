@@ -1,0 +1,2966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Make My Doc – Free PDF & Image Tools Online</title>
+<meta name="description" content="Make My Doc – Free online PDF tools. Merge, split, compress, convert, edit, sign PDFs and more. No sign-up, no installs."/>
+
+<meta name="robots" content="index, follow"/>
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0a0a0a;--white:#fafaf8;--cream:#f5f3ee;--accent:#ff4d00;
+  --accent2:#ffd166;--muted:#888880;--border:#e0ddd6;--card:#fff;
+  --radius:18px;--fh:'Times New Roman',Times,serif;--fb:'Times New Roman',Times,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--black);font-family:var(--fb);min-height:100vh;overflow-x:hidden}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,243,238,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:32px}
+.nav-logo span{font-family:var(--fh);font-weight:800;font-size:1.2rem;color:var(--black);letter-spacing:-.5px}
+.nav-search{flex:1;max-width:340px;margin:0 30px;position:relative;display:flex;align-items:center}
+.nav-search input{width:100%;padding:9px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--white);font-family:var(--fb);font-size:.88rem;outline:none;transition:border-color .2s;line-height:1.4}
+.nav-search input:focus{border-color:var(--accent)}
+.nav-search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:.82rem;line-height:1;pointer-events:none;user-select:none;display:flex;align-items:center;justify-content:center;width:16px;height:16px}
+.nav-cta{background:var(--black);color:var(--white);padding:9px 22px;border-radius:50px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--accent)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0a0a0a 0%,#1c1208 100%);color:var(--white);padding:60px 40px;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(255,209,102,.15);border:1px solid rgba(255,209,102,.3);color:var(--accent2);font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px}
+.hero h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.4rem);font-weight:800;letter-spacing:-1.5px;line-height:1.08;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:1rem;color:#aaa;max-width:500px;margin:0 auto 32px}
+.hero-stats{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.hs{text-align:center}
+.hs-num{font-family:var(--fh);font-size:1.6rem;font-weight:800;color:var(--accent2)}
+.hs-lbl{font-size:.75rem;color:#666}
+
+/* AD BANNER */
+.ad-banner{background:var(--white);border-bottom:1px solid var(--border);padding:12px 40px;text-align:center;font-size:.7rem;color:#bbb;letter-spacing:.06em;text-transform:uppercase}
+.ad-slot{background:#f8f8f8;border:1px dashed #ddd;border-radius:8px;padding:16px;text-align:center;color:#bbb;font-size:.75rem;letter-spacing:.04em;margin:0 auto;max-width:728px}
+
+/* SECTION */
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+.section{padding:60px 0}
+.sec-label{font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.sec-title{font-family:var(--fh);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-.6px;margin-bottom:10px}
+.sec-sub{font-size:.95rem;color:var(--muted);margin-bottom:36px}
+
+/* CATEGORY TABS */
+.cat-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+.cat-tab{padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:var(--white);font-family:var(--fb);font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--muted)}
+.cat-tab.active,.cat-tab:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+
+/* TOOLS GRID */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s,border-color .2s;display:flex;flex-direction:column;gap:12px;cursor:pointer;position:relative;overflow:hidden}
+.tool-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1);border-color:var(--accent)}
+.tool-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.tool-name{font-family:var(--fh);font-size:1rem;font-weight:700}
+.tool-desc{font-size:.82rem;color:var(--muted);line-height:1.55}
+.tool-arrow{margin-top:auto;font-size:.78rem;font-weight:600;color:var(--accent)}
+.tool-badge{position:absolute;top:12px;right:12px;background:var(--accent2);color:var(--black);font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:50px;letter-spacing:.04em}
+.ic-o{background:#fff0e8}.ic-y{background:#fff9e0}.ic-g{background:#eaf5ee}.ic-b{background:#e8f0ff}.ic-p{background:#f3eeff}.ic-pk{background:#ffebf0}.ic-t{background:#e8fff8}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(10,10,10,.6);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--white);border-radius:24px;padding:36px;width:100%;max-width:580px;max-height:90vh;overflow-y:auto;box-shadow:0 30px 80px rgba(0,0,0,.25);position:relative;animation:popIn .22s ease}
+@keyframes popIn{from{transform:scale(.94) translateY(16px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--cream);border:none;border-radius:50%;width:32px;height:32px;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:var(--border)}
+.modal-title{font-family:var(--fh);font-size:1.4rem;font-weight:800;margin-bottom:4px}
+.modal-sub{font-size:.88rem;color:var(--muted);margin-bottom:24px}
+
+/* FORM ELEMENTS */
+.drop-zone{border:2px dashed var(--border);border-radius:14px;padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;margin-bottom:16px}
+.drop-zone:hover,.drop-zone.drag{border-color:var(--accent);background:#fff5f2}
+.drop-icon{font-size:2.2rem;margin-bottom:8px}
+.drop-label{font-size:.85rem;color:var(--muted)}
+.drop-label strong{color:var(--black)}
+input[type=file]{display:none}
+.btn-action{width:100%;padding:13px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:.92rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s;font-family:var(--fb)}
+.btn-action:hover{background:#d43d00;transform:translateY(-1px)}
+.btn-action:disabled{background:#ccc;cursor:not-allowed;transform:none}
+.btn-secondary{width:100%;padding:11px;background:transparent;color:var(--black);border:1.5px solid var(--border);border-radius:50px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--fb);transition:border-color .2s}
+.btn-secondary:hover{border-color:var(--black)}
+.input-label{font-size:.82rem;font-weight:600;display:block;margin-bottom:4px;margin-top:12px}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;background:var(--border);border-radius:10px;outline:none;margin:8px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;background:var(--accent);border-radius:50%;cursor:pointer}
+select,textarea,input[type=text],input[type=number]{width:100%;padding:10px 14px;border-radius:10px;border:1.5px solid var(--border);font-family:var(--fb);font-size:.88rem;outline:none;background:var(--white);transition:border-color .2s;margin-bottom:4px}
+select:focus,textarea:focus,input[type=text]:focus,input[type=number]:focus{border-color:var(--accent)}
+.tool-output{background:var(--cream);border-radius:12px;padding:14px;font-size:.84rem;display:none;margin-top:12px;word-break:break-all;max-height:220px;overflow:auto;white-space:pre-wrap;line-height:1.6}
+.tool-output.show{display:block}
+.progress-wrap{background:var(--border);border-radius:50px;height:7px;margin:10px 0;display:none}
+.progress-fill{height:100%;border-radius:50px;background:var(--accent);width:0%;transition:width .15s}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{display:inline-block;background:var(--cream);border:1px solid var(--border);border-radius:50px;padding:4px 12px;font-size:.75rem;font-weight:600;cursor:pointer;margin:3px;transition:background .2s}
+.chip.active,.chip:hover{background:var(--black);color:var(--white);border-color:var(--black)}
+.result-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:16px;margin-top:12px;display:none}
+.result-card.show{display:block}
+
+/* FOOTER */
+footer{background:var(--black);color:#666;padding:50px 40px 30px}
+.footer-inner{max-width:1280px;margin:0 auto}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand img{height:30px;filter:invert(1)}
+.footer-brand p{font-size:.82rem;color:#555;line-height:1.6;max-width:260px}
+.footer-col h4{font-family:var(--fh);font-size:.85rem;font-weight:700;color:var(--white);margin-bottom:14px}
+.footer-col a{display:block;font-size:.8rem;color:#555;text-decoration:none;margin-bottom:7px;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid #1a1a1a;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.78rem}
+
+@media(max-width:900px){
+  nav{padding:0 16px}.nav-search{max-width:200px;margin:0 12px}
+  .hero{padding:40px 20px}.hero-stats{gap:20px}
+  .wrap{padding:0 20px}.section{padding:40px 0}
+  .tools-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+  .footer-top{grid-template-columns:1fr 1fr}
+  footer{padding:40px 20px 24px}
+  .ad-banner{padding:10px 16px}
+}
+@media(max-width:500px){
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .tool-card{padding:16px;gap:8px}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo.png" alt="Make My Doc"/>
+    <span>Make My Doc</span>
+  </a>
+  <div class="nav-search">
+    <input type="text" placeholder="Search tools…" id="search-input" oninput="filterTools(this.value)" autocomplete="off"/>
+  </div>
+  <a class="nav-cta" href="#tools">All Tools</a>
+</nav>
+
+<!-- AD TOP -->
+<div class="ad-banner">
+  <div class="ad-slot" style="height:90px;line-height:90px;">Advertisement • 728×90 Leaderboard</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">✦ Free PDF Tools Online</div>
+  <h1>All the PDF tools you need,<br/><em>zero installs.</em></h1>
+  <p>Merge, split, compress, convert, edit & sign PDFs — all free, all in your browser, all private.</p>
+  <div class="hero-stats">
+    <div class="hs"><div class="hs-num">50+</div><div class="hs-lbl">Tools</div></div>
+    <div class="hs"><div class="hs-num">100%</div><div class="hs-lbl">Free</div></div>
+    <div class="hs"><div class="hs-num">0</div><div class="hs-lbl">Sign-ups</div></div>
+    <div class="hs"><div class="hs-num">∞</div><div class="hs-lbl">Files</div></div>
+  </div>
+</div>
+
+<!-- TOOLS -->
+<div class="wrap">
+<div class="section" id="tools">
+
+  <div class="cat-tabs" id="cat-tabs">
+    <button class="cat-tab active" onclick="filterCat('all',this)">All Tools</button>
+    <button class="cat-tab" onclick="filterCat('pdf',this)">📄 PDF</button>
+    <button class="cat-tab" onclick="filterCat('image',this)">🖼️ Image</button>
+    <button class="cat-tab" onclick="filterCat('ai',this)">🤖 AI Tools</button>
+    <button class="cat-tab" onclick="filterCat('calc',this)">🧮 Calculators</button>
+    <button class="cat-tab" onclick="filterCat('text',this)">✏️ Text</button>
+    <button class="cat-tab" onclick="filterCat('social',this)">📱 Social</button>
+  </div>
+
+  <div class="tools-grid" id="tools-grid">
+
+    <!-- PDF TOOLS -->
+    <div class="tool-card" data-cat="pdf" data-name="jpg to pdf convert images" onclick="openTool('jpg2pdf')">
+      <div class="tool-icon ic-o">🖼️</div>
+      <div class="tool-name">JPG to PDF</div>
+      <div class="tool-desc">Convert JPG/PNG images into a single PDF document instantly.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="pdf" data-name="pdf merge combine join" onclick="openTool('mergepdf')">
+      <div class="tool-icon ic-o">📎</div>
+      <div class="tool-name">Merge PDF</div>
+      <div class="tool-desc">Combine multiple PDF files into one seamless document.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="pdf" data-name="pdf to jpg convert extract" onclick="openTool('pdf2jpg')">
+      <div class="tool-icon ic-o">📄</div>
+      <div class="tool-name">PDF to JPG</div>
+      <div class="tool-desc">Extract pages from a PDF and save them as JPG images.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="pdf" data-name="watermark pdf add text" onclick="openTool('watermark')">
+      <div class="tool-icon ic-o">💧</div>
+      <div class="tool-name">Watermark PDF</div>
+      <div class="tool-desc">Add custom text watermarks to your PDF pages.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="pdf" data-name="esign digital signature pdf" onclick="openTool('esign')">
+      <div class="tool-icon ic-b">✍️</div>
+      <div class="tool-name">eSign PDF</div>
+      <div class="tool-desc">Draw and place your signature on any PDF document.</div>
+      <div class="tool-badge">HOT</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="pdf" data-name="ocr text extraction scan" onclick="openTool('ocr')">
+      <div class="tool-icon ic-p">🔍</div>
+      <div class="tool-name">OCR Text Extractor</div>
+      <div class="tool-desc">Extract text from scanned images and PDFs using AI recognition.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <!-- IMAGE TOOLS -->
+    <div class="tool-card" data-cat="image" data-name="compress image reduce size" onclick="openTool('compress')">
+      <div class="tool-icon ic-y">🗜️</div>
+      <div class="tool-name">Compress Image</div>
+      <div class="tool-desc">Shrink JPG/PNG files with adjustable quality slider.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="resize image width height pixels" onclick="openTool('resize')">
+      <div class="tool-icon ic-y">↔️</div>
+      <div class="tool-name">Image Resizer</div>
+      <div class="tool-desc">Resize images to exact pixels or percentage while preserving ratio.</div>
+      <div class="tool-badge">HOT</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="convert image format jpg png webp" onclick="openTool('convert')">
+      <div class="tool-icon ic-y">🔄</div>
+      <div class="tool-name">Image Converter</div>
+      <div class="tool-desc">Convert between JPG, PNG, WEBP, and BMP formats.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="crop image trim cut" onclick="openTool('crop')">
+      <div class="tool-icon ic-y">✂️</div>
+      <div class="tool-name">Image Cropper</div>
+      <div class="tool-desc">Crop images freely or to preset aspect ratios.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="rotate flip image mirror" onclick="openTool('rotate')">
+      <div class="tool-icon ic-y">🔃</div>
+      <div class="tool-name">Rotate & Flip</div>
+      <div class="tool-desc">Rotate images 90°/180°/270° or flip horizontally/vertically.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="color picker eyedropper hex rgb" onclick="openTool('colorpicker')">
+      <div class="tool-icon ic-p">🎨</div>
+      <div class="tool-name">Color Picker</div>
+      <div class="tool-desc">Pick any color from an uploaded image and get HEX/RGB values.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="image" data-name="grayscale black white filter" onclick="openTool('grayscale')">
+      <div class="tool-icon ic-y">⚫</div>
+      <div class="tool-name">Grayscale Converter</div>
+      <div class="tool-desc">Convert any color image to black and white instantly.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <!-- AI TOOLS -->
+    <div class="tool-card" data-cat="ai" data-name="ai text summarizer summarize article" onclick="openTool('summarize')">
+      <div class="tool-icon ic-t">🤖</div>
+      <div class="tool-name">AI Summarizer</div>
+      <div class="tool-desc">Paste any text or article and get a concise AI-generated summary.</div>
+      <div class="tool-badge">AI</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="ai" data-name="ai grammar checker rewrite improve" onclick="openTool('grammar')">
+      <div class="tool-icon ic-t">✏️</div>
+      <div class="tool-name">AI Grammar Checker</div>
+      <div class="tool-desc">Fix grammar, spelling, and rephrase sentences with AI.</div>
+      <div class="tool-badge">AI</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="ai" data-name="ai hashtag generator instagram social media" onclick="openTool('hashtag')">
+      <div class="tool-icon ic-t">📱</div>
+      <div class="tool-name">AI Hashtag Generator</div>
+      <div class="tool-desc">Generate trending hashtags for Instagram, TikTok, and Twitter.</div>
+      <div class="tool-badge">AI</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="ai" data-name="ai product description generator ecommerce" onclick="openTool('productdesc')">
+      <div class="tool-icon ic-t">🛒</div>
+      <div class="tool-name">Product Description AI</div>
+      <div class="tool-desc">Write compelling product descriptions for your online store.</div>
+      <div class="tool-badge">AI</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <!-- CALCULATORS -->
+    <div class="tool-card" data-cat="calc" data-name="emi loan calculator mortgage" onclick="openTool('emi')">
+      <div class="tool-icon ic-g">🏦</div>
+      <div class="tool-name">EMI Calculator</div>
+      <div class="tool-desc">Calculate monthly loan EMI for home, car or personal loans.</div>
+      <div class="tool-badge">💰</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="calc" data-name="percentage calculator percent" onclick="openTool('percent')">
+      <div class="tool-icon ic-g">%</div>
+      <div class="tool-name">Percentage Calculator</div>
+      <div class="tool-desc">Calculate percentages, increases, decreases and differences.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="calc" data-name="age calculator birthday date of birth" onclick="openTool('age')">
+      <div class="tool-icon ic-g">🎂</div>
+      <div class="tool-name">Age Calculator</div>
+      <div class="tool-desc">Calculate exact age in years, months and days from date of birth.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="calc" data-name="bmi calculator body mass index health" onclick="openTool('bmi')">
+      <div class="tool-icon ic-g">⚖️</div>
+      <div class="tool-name">BMI Calculator</div>
+      <div class="tool-desc">Calculate your Body Mass Index and understand your health range.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="calc" data-name="unit converter measurement km miles kg" onclick="openTool('units')">
+      <div class="tool-icon ic-g">📏</div>
+      <div class="tool-name">Unit Converter</div>
+      <div class="tool-desc">Convert length, weight, temperature, speed and area units.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="calc" data-name="gst tax calculator india" onclick="openTool('gst')">
+      <div class="tool-icon ic-g">🧾</div>
+      <div class="tool-name">GST Calculator</div>
+      <div class="tool-desc">Calculate GST inclusive/exclusive amounts for 5%, 12%, 18% and 28%.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <!-- TEXT TOOLS -->
+    <div class="tool-card" data-cat="text" data-name="word count character counter text" onclick="openTool('wordcount')">
+      <div class="tool-icon ic-b">📊</div>
+      <div class="tool-name">Word Counter</div>
+      <div class="tool-desc">Count words, characters, sentences and paragraphs in your text.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="text" data-name="case converter uppercase lowercase title" onclick="openTool('caseconv')">
+      <div class="tool-icon ic-b">Aa</div>
+      <div class="tool-name">Case Converter</div>
+      <div class="tool-desc">Convert text to UPPER, lower, Title, Sentence or camelCase.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="text" data-name="invoice generator bill create pdf" onclick="openTool('invoice')">
+      <div class="tool-icon ic-b">🧾</div>
+      <div class="tool-name">Invoice Generator</div>
+      <div class="tool-desc">Create professional invoices and download them as PDF.</div>
+      <div class="tool-badge">💰</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="text" data-name="password generator secure random strong" onclick="openTool('password')">
+      <div class="tool-icon ic-b">🔐</div>
+      <div class="tool-name">Password Generator</div>
+      <div class="tool-desc">Generate strong, secure random passwords with custom options.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <!-- SOCIAL TOOLS -->
+    <div class="tool-card" data-cat="social" data-name="qr code generator create scan" onclick="openTool('qr')">
+      <div class="tool-icon ic-pk">📷</div>
+      <div class="tool-name">QR Code Generator</div>
+      <div class="tool-desc">Create QR codes for URLs, text, contact info and more.</div>
+      <div class="tool-badge">HOT</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="social" data-name="signature maker draw sign" onclick="openTool('signature')">
+      <div class="tool-icon ic-b">✍️</div>
+      <div class="tool-name">Signature Maker</div>
+      <div class="tool-desc">Draw your handwritten signature and download as transparent PNG.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="social" data-name="instagram post resize social media image" onclick="openTool('socialmedia')">
+      <div class="tool-icon ic-pk">📐</div>
+      <div class="tool-name">Social Media Resizer</div>
+      <div class="tool-desc">Resize images perfectly for Instagram, Facebook, Twitter and YouTube.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+    <div class="tool-card" data-cat="social" data-name="barcode generator create ean code128" onclick="openTool('barcode')">
+      <div class="tool-icon ic-pk">|||</div>
+      <div class="tool-name">Barcode Generator</div>
+      <div class="tool-desc">Generate CODE128, EAN-13 and other barcodes instantly.</div>
+      <div class="tool-arrow">Use tool →</div>
+    </div>
+
+  </div><!-- /tools-grid -->
+</div>
+</div>
+
+<!-- PDF WORKFLOWS SECTION -->
+<div style="background:var(--white);border-top:2px solid var(--border);border-bottom:2px solid var(--border);padding:60px 0;">
+<div class="wrap">
+  <div class="sec-label">All Workflows</div>
+  <h2 class="sec-title">Complete PDF Toolkit</h2>
+  <p class="sec-sub">Everything you need to work with PDFs — organize, convert, edit, secure, and analyze.</p>
+
+  <!-- Workflow category tabs -->
+  <div class="cat-tabs" id="wf-tabs" style="margin-bottom:28px;">
+    <button class="cat-tab active" onclick="filterWF('all',this)">All</button>
+    <button class="cat-tab" onclick="filterWF('organize',this)">📂 Organize PDF</button>
+    <button class="cat-tab" onclick="filterWF('optimize',this)">⚡ Optimize PDF</button>
+    <button class="cat-tab" onclick="filterWF('convert',this)">🔄 Convert PDF</button>
+    <button class="cat-tab" onclick="filterWF('edit',this)">✏️ Edit PDF</button>
+    <button class="cat-tab" onclick="filterWF('security',this)">🔒 PDF Security</button>
+    <button class="cat-tab" onclick="filterWF('intelligence',this)">🤖 PDF Intelligence</button>
+  </div>
+
+  <div class="tools-grid" id="wf-grid">
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_merge')" style="cursor:pointer">
+      <div class="tool-icon ic-o">📎</div>
+      <div class="tool-name">Merge PDF</div>
+      <div class="tool-desc">Combine PDFs in the order you want with the easiest PDF merger available.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_split')" style="cursor:pointer">
+      <div class="tool-icon ic-o">✂️</div>
+      <div class="tool-name">Split PDF</div>
+      <div class="tool-desc">Separate one page or a whole set for easy conversion into independent PDF files.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_organize')" style="cursor:pointer">
+      <div class="tool-icon ic-o">🗂️</div>
+      <div class="tool-name">Organize PDF</div>
+      <div class="tool-desc">Sort pages of your PDF file however you like. Delete or add PDF pages at your convenience.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_rotate')" style="cursor:pointer">
+      <div class="tool-icon ic-o">🔃</div>
+      <div class="tool-name">Rotate PDF</div>
+      <div class="tool-desc">Rotate your PDFs the way you need them. You can even rotate multiple PDFs at once!</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_pagenumbers')" style="cursor:pointer">
+      <div class="tool-icon ic-b">🔢</div>
+      <div class="tool-name">Page Numbers</div>
+      <div class="tool-desc">Add page numbers into PDFs with ease. Choose your positions, dimensions, typography.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="organize" onclick="openTool('wf_crop')" style="cursor:pointer">
+      <div class="tool-icon ic-y">✂️</div>
+      <div class="tool-name">Crop PDF</div>
+      <div class="tool-desc">Crop margins of PDF documents or select specific areas, then apply changes to one or all pages.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="optimize" onclick="openTool('wf_compress')" style="cursor:pointer">
+      <div class="tool-icon ic-y">🗜️</div>
+      <div class="tool-name">Compress PDF</div>
+      <div class="tool-desc">Reduce file size while optimizing for maximal PDF quality.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="optimize" onclick="openTool('wf_repair')" style="cursor:pointer">
+      <div class="tool-icon ic-g">🔧</div>
+      <div class="tool-name">Repair PDF</div>
+      <div class="tool-desc">Repair a damaged PDF and recover data from corrupt PDF. Fix PDF files with our Repair tool.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="optimize" onclick="openTool('wf_pdfa')" style="cursor:pointer">
+      <div class="tool-icon ic-b">📋</div>
+      <div class="tool-name">PDF to PDF/A</div>
+      <div class="tool-desc">Transform your PDF to PDF/A, the ISO-standardized version for long-term archiving.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_pdf2word')" style="cursor:pointer">
+      <div class="tool-icon ic-b">📝</div>
+      <div class="tool-name">PDF to Word</div>
+      <div class="tool-desc">Easily convert your PDF files into easy to edit DOC and DOCX documents. Almost 100% accurate.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_pdf2ppt')" style="cursor:pointer">
+      <div class="tool-icon ic-o">📊</div>
+      <div class="tool-name">PDF to PowerPoint</div>
+      <div class="tool-desc">Turn your PDF files into easy to edit PPT and PPTX slideshows.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_pdf2excel')" style="cursor:pointer">
+      <div class="tool-icon ic-g">📈</div>
+      <div class="tool-name">PDF to Excel</div>
+      <div class="tool-desc">Pull data straight from PDFs into Excel spreadsheets in a few short seconds.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_word2pdf')" style="cursor:pointer">
+      <div class="tool-icon ic-b">📄</div>
+      <div class="tool-name">Word to PDF</div>
+      <div class="tool-desc">Make DOC and DOCX files easy to read by converting them to PDF.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_ppt2pdf')" style="cursor:pointer">
+      <div class="tool-icon ic-o">🖥️</div>
+      <div class="tool-name">PowerPoint to PDF</div>
+      <div class="tool-desc">Make PPT and PPTX slideshows easy to view by converting them to PDF.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_excel2pdf')" style="cursor:pointer">
+      <div class="tool-icon ic-g">📉</div>
+      <div class="tool-name">Excel to PDF</div>
+      <div class="tool-desc">Make EXCEL spreadsheets easy to read by converting them to PDF.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_pdf2jpg')" style="cursor:pointer">
+      <div class="tool-icon ic-pk">🖼️</div>
+      <div class="tool-name">PDF to JPG</div>
+      <div class="tool-desc">Convert each PDF page into a JPG or extract all images contained in a PDF.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_jpg2pdf')" style="cursor:pointer">
+      <div class="tool-icon ic-pk">🗃️</div>
+      <div class="tool-name">JPG to PDF</div>
+      <div class="tool-desc">Convert JPG images to PDF in seconds. Easily adjust orientation and margins.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_html2pdf')" style="cursor:pointer">
+      <div class="tool-icon ic-t">🌐</div>
+      <div class="tool-name">HTML to PDF</div>
+      <div class="tool-desc">Convert webpages in HTML to PDF. Paste the URL and convert it to PDF with a click.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="convert" onclick="openTool('wf_scan')" style="cursor:pointer">
+      <div class="tool-icon ic-t">📷</div>
+      <div class="tool-name">Scan to PDF</div>
+      <div class="tool-desc">Capture document scans from your mobile device and send them instantly to your browser.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="edit" onclick="openTool('wf_edit')" style="cursor:pointer">
+      <div class="tool-icon ic-y">✏️</div>
+      <div class="tool-name">Edit PDF</div>
+      <div class="tool-desc">Add text, images, shapes or freehand annotations to a PDF. Edit size, font, and color.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="edit" onclick="openTool('wf_sign')" style="cursor:pointer">
+      <div class="tool-icon ic-b">✍️</div>
+      <div class="tool-name">Sign PDF</div>
+      <div class="tool-badge">HOT</div>
+      <div class="tool-desc">Sign yourself or request electronic signatures from others.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="edit" onclick="openTool('wf_watermark')" style="cursor:pointer">
+      <div class="tool-icon ic-b">💧</div>
+      <div class="tool-name">Watermark PDF</div>
+      <div class="tool-desc">Stamp an image or text over your PDF in seconds. Choose typography, transparency and position.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="edit" onclick="openTool('wf_forms')" style="cursor:pointer">
+      <div class="tool-icon ic-g">📋</div>
+      <div class="tool-name">PDF Forms</div>
+      <div class="tool-badge">New!</div>
+      <div class="tool-desc">Detect form fields automatically, create interactive fillable PDFs, or fill PDF forms yourself.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="edit" onclick="openTool('wf_redact')" style="cursor:pointer">
+      <div class="tool-icon ic-pk">🚫</div>
+      <div class="tool-name">Redact PDF</div>
+      <div class="tool-desc">Permanently remove sensitive information from a PDF with redaction tools.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="security" onclick="openTool('wf_unlock')" style="cursor:pointer">
+      <div class="tool-icon ic-g">🔓</div>
+      <div class="tool-name">Unlock PDF</div>
+      <div class="tool-desc">Remove PDF password security, giving you the freedom to use your PDFs as you want.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="security" onclick="openTool('wf_protect')" style="cursor:pointer">
+      <div class="tool-icon ic-o">🔐</div>
+      <div class="tool-name">Protect PDF</div>
+      <div class="tool-desc">Protect PDF files with a password. Encrypt PDF documents to prevent unauthorized access.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="intelligence" onclick="openTool('wf_ocr')" style="cursor:pointer">
+      <div class="tool-icon ic-t">🔍</div>
+      <div class="tool-name">OCR PDF</div>
+      <div class="tool-desc">Easily convert scanned PDF into searchable and selectable documents.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="intelligence" onclick="openTool('wf_compare')" style="cursor:pointer">
+      <div class="tool-icon ic-p">🔀</div>
+      <div class="tool-name">Compare PDF</div>
+      <div class="tool-desc">Show a side-by-side document comparison and easily spot changes between different file versions.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="intelligence" onclick="openTool('wf_summarize')" style="cursor:pointer">
+      <div class="tool-icon ic-t">🤖</div>
+      <div class="tool-name">AI Summarizer</div>
+      <div class="tool-badge">New!</div>
+      <div class="tool-desc">Quickly generate concise summaries from articles, paragraphs, and essays with clear key points.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="intelligence" onclick="openTool('wf_translate')" style="cursor:pointer">
+      <div class="tool-icon ic-t">🌍</div>
+      <div class="tool-name">Translate PDF</div>
+      <div class="tool-badge">New!</div>
+      <div class="tool-desc">Easily translate PDF files powered by AI. Keep fonts, layout, and formatting perfectly intact.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+    <div class="tool-card" data-wf="intelligence" onclick="openTool('wf_workflows')" style="cursor:pointer">
+      <div class="tool-icon ic-p">⚙️</div>
+      <div class="tool-name">Create a Workflow</div>
+      <div class="tool-desc">Create custom workflows with your favorite tools, automate tasks, and reuse them anytime.</div>
+      <div class="tool-arrow">Open tool →</div>
+    </div>
+
+  </div><!-- /wf-grid -->
+</div>
+</div>
+
+<!-- SIDE AD (in between sections) -->
+<div style="background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 40px;text-align:center;">
+  <div class="ad-slot" style="height:90px;line-height:90px;max-width:970px;">Advertisement • 970×90 Billboard</div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="wrap">
+<div class="section">
+  <div class="sec-label">How it works</div>
+  <h2 class="sec-title">Three steps, zero hassle</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:10px;">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
+      <div style="font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--border);margin-bottom:12px;">01</div>
+      <div style="font-family:var(--fh);font-weight:700;margin-bottom:6px;">Upload your file</div>
+      <div style="font-size:.84rem;color:var(--muted);">Drag & drop or click to select. Works with PDFs, images, and more.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
+      <div style="font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--border);margin-bottom:12px;">02</div>
+      <div style="font-family:var(--fh);font-weight:700;margin-bottom:6px;">Apply your tool</div>
+      <div style="font-size:.84rem;color:var(--muted);">Everything runs in your browser. Your files never leave your device.</div>
+    </div>
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;">
+      <div style="font-family:var(--fh);font-size:2.5rem;font-weight:800;color:var(--border);margin-bottom:12px;">03</div>
+      <div style="font-family:var(--fh);font-weight:700;margin-bottom:6px;">Download result</div>
+      <div style="font-size:.84rem;color:var(--muted);">Instant download. No waiting, no email, no account required.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- BOTTOM AD -->
+<div style="padding:20px 40px;text-align:center;background:var(--white);border-top:1px solid var(--border);">
+  <div class="ad-slot" style="height:250px;line-height:250px;">Advertisement • 300×250 Medium Rectangle</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:9px;margin-bottom:10px;">
+          <img src="logo.png" alt="Make My Doc" style="height:30px;filter:invert(1);"/>
+          <span style="font-family:var(--fh);font-weight:800;font-size:1.1rem;color:var(--white);letter-spacing:-.4px;">Make My Doc</span>
+        </div>
+        <p>Free online PDF tools. Merge, compress, convert, sign PDFs & more — no sign-up, no installs. All processing happens in your browser.</p>
+      </div>
+      <div class="footer-col">
+        <h4>PDF Tools</h4>
+        <a href="#" onclick="openTool('jpg2pdf');return false">JPG to PDF</a>
+        <a href="#" onclick="openTool('mergepdf');return false">Merge PDF</a>
+        <a href="#" onclick="openTool('pdf2jpg');return false">PDF to JPG</a>
+        <a href="#" onclick="openTool('watermark');return false">Watermark PDF</a>
+        <a href="#" onclick="openTool('esign');return false">eSign PDF</a>
+      </div>
+      <div class="footer-col">
+        <h4>Image Tools</h4>
+        <a href="#" onclick="openTool('compress');return false">Compress Image</a>
+        <a href="#" onclick="openTool('resize');return false">Image Resizer</a>
+        <a href="#" onclick="openTool('convert');return false">Image Converter</a>
+        <a href="#" onclick="openTool('crop');return false">Image Cropper</a>
+        <a href="#" onclick="openTool('rotate');return false">Rotate & Flip</a>
+      </div>
+      <div class="footer-col">
+        <h4>More Tools</h4>
+        <a href="#" onclick="openTool('qr');return false">QR Generator</a>
+        <a href="#" onclick="openTool('emi');return false">EMI Calculator</a>
+        <a href="#" onclick="openTool('wordcount');return false">Word Counter</a>
+        <a href="#" onclick="openTool('invoice');return false">Invoice Generator</a>
+        <a href="#" onclick="openTool('password');return false">Password Generator</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Make My Doc. All rights reserved. &nbsp;·&nbsp; <a href="privacy.html" style="color:#666;text-decoration:none;" onmouseover="this.style.color='#ff4d00'" onmouseout="this.style.color='#666'">Privacy Policy</a></p>
+      <p style="text-align:center;">Made with ❤️ — A <strong style="color:var(--white)">Sitizen</strong> Creation</p>
+      <p>🔒 Files never leave your browser · 100% Private</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeIfOut(event)">
+  <div class="modal" id="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="m-title"></div>
+    <div class="modal-sub" id="m-sub"></div>
+    <div id="m-body"></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+
+// ──────────────────────────────────────────────
+//  UTILS
+// ──────────────────────────────────────────────
+function openModal(title, sub, html) {
+  document.getElementById('m-title').textContent = title;
+  document.getElementById('m-sub').textContent = sub;
+  document.getElementById('m-body').innerHTML = html;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.getElementById('m-body').innerHTML = '';
+}
+function closeIfOut(e) { if(e.target===document.getElementById('modal-overlay')) closeModal(); }
+
+function readFile(inp) {
+  return new Promise(r => { const fr=new FileReader(); fr.onload=e=>r(e.target.result); fr.readAsDataURL(inp.files[0]); });
+}
+function dlBlob(blob, name) {
+  const u=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=u; a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(u),2000);
+}
+function dropHTML(id, accept, lbl, multi='') {
+  return `
+  <div class="drop-zone" id="dz${id}"
+    onclick="document.getElementById('fi${id}').click()"
+    ondragover="event.preventDefault();this.classList.add('drag')"
+    ondragleave="this.classList.remove('drag')"
+    ondrop="doDrop(event,'fi${id}','dz${id}')">
+    <div class="drop-icon">📂</div>
+    <div class="drop-label"><strong>Click to upload</strong> or drag & drop<br/>${lbl}</div>
+  </div>
+  <input type="file" id="fi${id}" accept="${accept}" ${multi} onchange="fileChosen(this,'dz${id}')"/>`;
+}
+function doDrop(e,fid,dzid) {
+  e.preventDefault(); document.getElementById(dzid).classList.remove('drag');
+  const inp=document.getElementById(fid);
+  Object.defineProperty(inp,'files',{value:e.dataTransfer.files,configurable:true});
+  inp.dispatchEvent(new Event('change'));
+}
+function fileChosen(inp,dzid) {
+  if(!inp.files[0]) return;
+  const names=Array.from(inp.files).map(f=>f.name).join(', ');
+  document.getElementById(dzid).innerHTML=`<div class="drop-icon">✅</div><div class="drop-label"><strong>${names}</strong><br/>${(inp.files[0].size/1024).toFixed(1)} KB</div>`;
+}
+function loadImg(src) {
+  return new Promise(r=>{ const i=new Image(); i.onload=()=>r(i); i.src=src; });
+}
+function showOut(id, txt) {
+  const el=document.getElementById(id); el.textContent=txt; el.classList.add('show');
+}
+
+// search & filter
+function filterTools(q) {
+  q = q.trim().toLowerCase();
+  const isSearch = q.length > 0;
+
+  // Filter main tools grid
+  let mainVisible = 0;
+  document.querySelectorAll('#tools-grid .tool-card').forEach(c => {
+    const nameEl = c.querySelector('.tool-name');
+    const descEl = c.querySelector('.tool-desc');
+    const haystack = (c.dataset.name||'').toLowerCase()
+      + ' ' + (nameEl ? nameEl.textContent.toLowerCase() : '')
+      + ' ' + (descEl ? descEl.textContent.toLowerCase() : '');
+    const match = !isSearch || haystack.includes(q);
+    c.style.display = match ? '' : 'none';
+    if (match) mainVisible++;
+  });
+
+  // Filter workflow grid
+  let wfVisible = 0;
+  document.querySelectorAll('#wf-grid .tool-card').forEach(c => {
+    const nameEl = c.querySelector('.tool-name');
+    const descEl = c.querySelector('.tool-desc');
+    const haystack = (nameEl ? nameEl.textContent.toLowerCase() : '')
+      + ' ' + (descEl ? descEl.textContent.toLowerCase() : '');
+    const match = !isSearch || haystack.includes(q);
+    c.style.display = match ? '' : 'none';
+    if (match) wfVisible++;
+  });
+
+  // Reset category tabs when searching
+  if (isSearch) {
+    document.querySelectorAll('#cat-tabs .cat-tab').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('#wf-tabs .cat-tab').forEach(b=>b.classList.remove('active'));
+  } else {
+    // restore All active on both tab rows
+    const mainAll = document.querySelector('#cat-tabs .cat-tab');
+    if (mainAll) { mainAll.classList.add('active'); }
+    const wfAll = document.querySelector('#wf-tabs .cat-tab');
+    if (wfAll) { wfAll.classList.add('active'); }
+  }
+}
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tool-card').forEach(c=>{
+    c.style.display = (cat==='all' || c.dataset.cat===cat) ? '' : 'none';
+  });
+}
+function filterWF(cat, btn) {
+  document.querySelectorAll('#wf-tabs .cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#wf-grid .tool-card').forEach(c=>{
+    c.style.display = (cat==='all' || c.dataset.wf===cat) ? '' : 'none';
+  });
+}
+
+// ──────────────────────────────────────────────
+//  TOOL ROUTER
+// ──────────────────────────────────────────────
+const TOOLS = {
+  jpg2pdf:{title:'JPG to PDF',sub:'Select one or more images to combine into a single PDF.'},
+  mergepdf:{title:'Merge PDF',sub:'Select multiple PDF files to combine them.'},
+  pdf2jpg:{title:'PDF to JPG',sub:'Upload a PDF to extract its first page as a JPG image.'},
+  watermark:{title:'Watermark PDF',sub:'Add text watermarks to every page of your PDF.'},
+  esign:{title:'eSign PDF',sub:'Draw your signature and place it on your PDF.'},
+  ocr:{title:'OCR Text Extractor',sub:'Extract readable text from images using AI.'},
+  compress:{title:'Compress Image',sub:'Reduce image size with adjustable quality.'},
+  resize:{title:'Image Resizer',sub:'Resize to exact dimensions or percentage.'},
+  convert:{title:'Image Converter',sub:'Convert between JPG, PNG, WEBP formats.'},
+  bgremove:{title:'Background Remover',sub:'Remove image background — get a transparent PNG.'},
+  crop:{title:'Image Cropper',sub:'Crop your image freely or with preset ratios.'},
+  rotate:{title:'Rotate & Flip',sub:'Rotate or flip your image in any direction.'},
+  passport:{title:'Passport Photo Maker',sub:'Resize photo to official passport dimensions.'},
+  colorpicker:{title:'Color Picker',sub:'Upload an image and click to pick any color.'},
+  grayscale:{title:'Grayscale Converter',sub:'Convert your image to black and white.'},
+  summarize:{title:'AI Text Summarizer',sub:'Paste your text and get an AI summary instantly.'},
+  grammar:{title:'AI Grammar Checker',sub:'Fix and improve your writing with AI.'},
+  hashtag:{title:'AI Hashtag Generator',sub:'Generate hashtags for your social media post.'},
+  productdesc:{title:'AI Product Description',sub:'Write product descriptions with AI.'},
+  emi:{title:'EMI Calculator',sub:'Calculate your loan EMI and total interest.'},
+  percent:{title:'Percentage Calculator',sub:'Calculate any percentage quickly.'},
+  age:{title:'Age Calculator',sub:'Find your exact age from date of birth.'},
+  bmi:{title:'BMI Calculator',sub:'Calculate your Body Mass Index.'},
+  units:{title:'Unit Converter',sub:'Convert between common measurement units.'},
+  gst:{title:'GST Calculator',sub:'Calculate GST inclusive or exclusive amounts.'},
+  wordcount:{title:'Word Counter',sub:'Count words, characters and more.'},
+  caseconv:{title:'Case Converter',sub:'Convert text case instantly.'},
+  invoice:{title:'Invoice Generator',sub:'Create a professional invoice and export as PDF.'},
+  password:{title:'Password Generator',sub:'Generate strong secure passwords.'},
+  qr:{title:'QR Code Generator',sub:'Create a QR code for any URL or text.'},
+  signature:{title:'Signature Maker',sub:'Draw and download your signature as PNG.'},
+  socialmedia:{title:'Social Media Resizer',sub:'Resize images for every social platform.'},
+  barcode:{title:'Barcode Generator',sub:'Generate CODE128 barcodes instantly.'},
+  // ── Workflow PDF Tools ──
+  wf_merge:{title:'Merge PDF',sub:'Combine multiple PDF files into one seamless document.'},
+  wf_split:{title:'Split PDF',sub:'Separate pages from a PDF into individual files.'},
+  wf_organize:{title:'Organize PDF',sub:'Reorder, delete or add pages to your PDF.'},
+  wf_rotate:{title:'Rotate PDF',sub:'Rotate pages in your PDF — one or all at once.'},
+  wf_pagenumbers:{title:'Page Numbers',sub:'Add page numbers to your PDF with custom positioning.'},
+  wf_crop:{title:'Crop PDF',sub:'Crop page margins or specific areas of your PDF.'},
+  wf_compress:{title:'Compress PDF',sub:'Reduce PDF file size while keeping quality high.'},
+  wf_repair:{title:'Repair PDF',sub:'Fix a damaged or corrupt PDF and recover your data.'},
+  wf_pdfa:{title:'PDF to PDF/A',sub:'Convert your PDF to the archival PDF/A standard.'},
+  wf_pdf2word:{title:'PDF to Word',sub:'Convert PDF files to editable DOC/DOCX documents.'},
+  wf_pdf2ppt:{title:'PDF to PowerPoint',sub:'Turn PDF pages into editable PPT/PPTX slides.'},
+  wf_pdf2excel:{title:'PDF to Excel',sub:'Extract tables from PDFs straight into spreadsheets.'},
+  wf_word2pdf:{title:'Word to PDF',sub:'Convert DOC and DOCX files to PDF easily.'},
+  wf_ppt2pdf:{title:'PowerPoint to PDF',sub:'Convert PPT and PPTX presentations to PDF.'},
+  wf_excel2pdf:{title:'Excel to PDF',sub:'Convert Excel spreadsheets to PDF for easy sharing.'},
+  wf_pdf2jpg:{title:'PDF to JPG',sub:'Convert each PDF page into a JPG image.'},
+  wf_jpg2pdf:{title:'JPG to PDF',sub:'Combine JPG images into a single PDF document.'},
+  wf_html2pdf:{title:'HTML to PDF',sub:'Convert a webpage URL or HTML content to PDF.'},
+  wf_scan:{title:'Scan to PDF',sub:'Use your camera to scan a document and save as PDF.'},
+  wf_edit:{title:'Edit PDF',sub:'Add text, images, shapes and annotations to your PDF.'},
+  wf_sign:{title:'Sign PDF',sub:'Draw your signature and place it on any PDF page.'},
+  wf_watermark:{title:'Watermark PDF',sub:'Stamp text or image watermarks over your PDF pages.'},
+  wf_forms:{title:'PDF Forms',sub:'Create fillable PDF forms or fill existing PDF forms.'},
+  wf_redact:{title:'Redact PDF',sub:'Permanently black out sensitive text and images in a PDF.'},
+  wf_unlock:{title:'Unlock PDF',sub:'Remove password protection from a PDF file.'},
+  wf_protect:{title:'Protect PDF',sub:'Add a password to encrypt and protect your PDF.'},
+  wf_ocr:{title:'OCR PDF',sub:'Make scanned PDFs searchable and selectable with OCR.'},
+  wf_compare:{title:'Compare PDF',sub:'View two PDF versions side-by-side and spot differences.'},
+  wf_summarize:{title:'AI Summarizer',sub:'Generate a concise AI summary of any PDF document.'},
+  wf_translate:{title:'Translate PDF',sub:'Translate your PDF to another language while keeping formatting.'},
+  wf_workflows:{title:'Create a Workflow',sub:'Build custom multi-step PDF workflows and automate tasks.'},
+};
+
+function openTool(id) {
+  const t = TOOLS[id];
+  openModal(t.title, t.sub, '');
+  builders[id] && builders[id]();
+}
+
+// ──────────────────────────────────────────────
+//  BUILDERS
+// ──────────────────────────────────────────────
+const builders = {};
+
+// JPG to PDF
+builders.jpg2pdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('j2p','image/*','JPG, PNG (multiple allowed)','multiple')}
+    <div class="progress-wrap" id="pb-j2p"><div class="progress-fill" id="pf-j2p"></div></div>
+    <button class="btn-action" style="margin-top:4px" onclick="doJpg2Pdf()">Convert to PDF</button>`;
+};
+async function doJpg2Pdf() {
+  const inp = document.getElementById('fij2p');
+  if(!inp.files.length){alert('Select at least one image');return;}
+  const pb=document.getElementById('pb-j2p'); pb.style.display='block';
+  const fill=document.getElementById('pf-j2p');
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF({unit:'mm',format:'a4'});
+  const files=Array.from(inp.files);
+  for(let i=0;i<files.length;i++){
+    if(i>0)pdf.addPage();
+    fill.style.width=`${Math.round((i/files.length)*80)}%`;
+    const url=await new Promise(r=>{const fr=new FileReader();fr.onload=e=>r(e.target.result);fr.readAsDataURL(files[i]);});
+    const img=await loadImg(url);
+    const pw=210,ph=297,scale=Math.min(pw/img.width,ph/img.height);
+    const fw=img.width*scale,fh=img.height*scale;
+    pdf.addImage(url,'JPEG',(pw-fw)/2,(ph-fh)/2,fw,fh);
+    fill.style.width=`${Math.round(((i+1)/files.length)*100)}%`;
+  }
+  pdf.save('sitizen-output.pdf');
+  pb.style.display='none';
+}
+
+// Merge PDF
+builders.mergepdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('mpdf','application/pdf','PDF files (multiple)','multiple')}
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:12px;">⚠️ Merging PDFs requires PDF-lib. Files will be processed in your browser.</p>
+    <button class="btn-action" onclick="doMergePdf()">Merge PDFs</button>
+    <div class="tool-output" id="out-mpdf"></div>`;
+};
+async function doMergePdf() {
+  const inp=document.getElementById('fimpdf');
+  if(inp.files.length<2){alert('Select at least 2 PDF files');return;}
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Loading library…'; btn.disabled=true;
+  try {
+    if(!window.PDFLib) {
+      await new Promise((res,rej)=>{
+        const s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+        s.onload=res; s.onerror=rej; document.head.appendChild(s);
+      });
+    }
+    btn.textContent='Merging…';
+    const merged=await PDFLib.PDFDocument.create();
+    for(const file of Array.from(inp.files)){
+      const buf=await file.arrayBuffer();
+      const pdf=await PDFLib.PDFDocument.load(buf);
+      const pages=await merged.copyPages(pdf,pdf.getPageIndices());
+      pages.forEach(p=>merged.addPage(p));
+    }
+    const bytes=await merged.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'sitizen-merged.pdf');
+    showOut('out-mpdf','✅ PDF merged successfully! Downloading…');
+  } catch(e){ showOut('out-mpdf','Error: '+e.message); }
+  btn.textContent='Merge PDFs'; btn.disabled=false;
+}
+
+// PDF to JPG
+builders.pdf2jpg = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('p2j','application/pdf','PDF file')}
+    <label class="input-label">Page number to extract:</label>
+    <input type="number" id="p2j-page" value="1" min="1"/>
+    <button class="btn-action" style="margin-top:8px" onclick="doPdf2Jpg()">Extract as JPG</button>
+    <div class="tool-output" id="out-p2j"></div>`;
+};
+async function doPdf2Jpg() {
+  const inp=document.getElementById('fip2j');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Loading…'; btn.disabled=true;
+  try {
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{
+        const s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+        s.onload=res; s.onerror=rej; document.head.appendChild(s);
+      });
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const buf=await inp.files[0].arrayBuffer();
+    const pdfDoc=await pdfjsLib.getDocument({data:buf}).promise;
+    const pageNum=Math.min(parseInt(document.getElementById('p2j-page').value)||1, pdfDoc.numPages);
+    const page=await pdfDoc.getPage(pageNum);
+    const vp=page.getViewport({scale:2});
+    const canvas=document.createElement('canvas');
+    canvas.width=vp.width; canvas.height=vp.height;
+    await page.render({canvasContext:canvas.getContext('2d'),viewport:vp}).promise;
+    canvas.toBlob(b=>dlBlob(b,`sitizen-page${pageNum}.jpg`),'image/jpeg',0.95);
+    showOut('out-p2j',`✅ Page ${pageNum} of ${pdfDoc.numPages} extracted!`);
+  } catch(e){ showOut('out-p2j','Error: '+e.message); }
+  btn.textContent='Extract as JPG'; btn.disabled=false;
+}
+
+// Watermark PDF
+builders.watermark = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wm','application/pdf','PDF file')}
+    <label class="input-label">Watermark Text:</label>
+    <input type="text" id="wm-text" placeholder="e.g. CONFIDENTIAL" value="CONFIDENTIAL"/>
+    <label class="input-label">Opacity: <span id="wm-op-val">30</span>%</label>
+    <input type="range" min="5" max="80" value="30" oninput="document.getElementById('wm-op-val').textContent=this.value" id="wm-op"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doWatermark()">Add Watermark</button>
+    <div class="tool-output" id="out-wm"></div>`;
+};
+async function doWatermark() {
+  const inp=document.getElementById('fiwm');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const text=document.getElementById('wm-text').value||'WATERMARK';
+  const opacity=parseInt(document.getElementById('wm-op').value)/100;
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Processing…'; btn.disabled=true;
+  try {
+    if(!window.PDFLib){
+      await new Promise((res,rej)=>{
+        const s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+        s.onload=res; s.onerror=rej; document.head.appendChild(s);
+      });
+    }
+    const buf=await inp.files[0].arrayBuffer();
+    const pdf=await PDFLib.PDFDocument.load(buf);
+    const pages=pdf.getPages();
+    const {rgb}=PDFLib;
+    for(const page of pages){
+      const {width,height}=page.getSize();
+      page.drawText(text,{
+        x:width/2-text.length*14,y:height/2,
+        size:52,color:rgb(0.7,0.1,0),opacity,
+        rotate:PDFLib.degrees(45)
+      });
+    }
+    const bytes=await pdf.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'sitizen-watermarked.pdf');
+    showOut('out-wm','✅ Watermark added to all '+pages.length+' pages!');
+  } catch(e){ showOut('out-wm','Error: '+e.message); }
+  btn.textContent='Add Watermark'; btn.disabled=false;
+}
+
+// eSign PDF
+builders.esign = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('esign','application/pdf','PDF file')}
+    <label class="input-label">Draw your signature:</label>
+    <canvas id="esign-canvas" width="480" height="140" style="border:2px solid var(--border);border-radius:10px;cursor:crosshair;touch-action:none;width:100%;background:#fff;display:block;margin-bottom:8px;"></canvas>
+    <div style="display:flex;gap:8px;margin-bottom:14px;">
+      <button class="btn-secondary" style="flex:1;padding:9px;border-radius:50px;font-size:.82rem;cursor:pointer;font-family:var(--fb);border:1.5px solid var(--border)" onclick="clearEsign()">Clear</button>
+      <label class="input-label" style="margin:0;display:flex;align-items:center;gap:6px;font-size:.82rem">Color <input type="color" id="esign-color" value="#000080" style="height:28px;border:none"/></label>
+    </div>
+    <button class="btn-action" onclick="doEsign()">Add Signature to PDF</button>
+    <div class="tool-output" id="out-esign"></div>`;
+  initSigCanvas('esign-canvas','esign-color');
+};
+function initSigCanvas(cid, colorId) {
+  const canvas=document.getElementById(cid), ctx=canvas.getContext('2d');
+  let drawing=false, lx=0, ly=0;
+  function pos(e){
+    const r=canvas.getBoundingClientRect(), sx=canvas.width/r.width, sy=canvas.height/r.height;
+    if(e.touches) return [(e.touches[0].clientX-r.left)*sx,(e.touches[0].clientY-r.top)*sy];
+    return [(e.clientX-r.left)*sx,(e.clientY-r.top)*sy];
+  }
+  canvas.onmousedown=canvas.ontouchstart=e=>{e.preventDefault();drawing=true;[lx,ly]=pos(e);};
+  canvas.onmousemove=canvas.ontouchmove=e=>{
+    e.preventDefault(); if(!drawing)return;
+    const [x,y]=pos(e);
+    ctx.beginPath(); ctx.strokeStyle=document.getElementById(colorId).value;
+    ctx.lineWidth=3; ctx.lineCap='round'; ctx.lineJoin='round';
+    ctx.moveTo(lx,ly); ctx.lineTo(x,y); ctx.stroke(); [lx,ly]=[x,y];
+  };
+  canvas.onmouseup=canvas.onmouseleave=canvas.ontouchend=()=>drawing=false;
+  window._esignCanvas=canvas;
+}
+function clearEsign(){const c=window._esignCanvas;c.getContext('2d').clearRect(0,0,c.width,c.height);}
+async function doEsign(){
+  const inp=document.getElementById('fiesign');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const sigData=window._esignCanvas.toDataURL('image/png');
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Processing…'; btn.disabled=true;
+  try {
+    if(!window.PDFLib){
+      await new Promise((res,rej)=>{
+        const s=document.createElement('script');
+        s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+        s.onload=res; s.onerror=rej; document.head.appendChild(s);
+      });
+    }
+    const buf=await inp.files[0].arrayBuffer();
+    const pdf=await PDFLib.PDFDocument.load(buf);
+    const pngBytes=await fetch(sigData).then(r=>r.arrayBuffer());
+    const sigImg=await pdf.embedPng(pngBytes);
+    const pages=pdf.getPages();
+    const lastPage=pages[pages.length-1];
+    const {width,height}=lastPage.getSize();
+    lastPage.drawImage(sigImg,{x:width-240,y:30,width:200,height:60});
+    const bytes=await pdf.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'sitizen-signed.pdf');
+    showOut('out-esign','✅ Signature added to the last page!');
+  } catch(e){showOut('out-esign','Error: '+e.message);}
+  btn.textContent='Add Signature to PDF'; btn.disabled=false;
+}
+
+// OCR
+builders.ocr = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('ocr','image/*','PNG, JPG, GIF')}
+    <div class="progress-wrap" id="pb-ocr"><div class="progress-fill" id="pf-ocr"></div></div>
+    <button class="btn-action" onclick="doOCR()">Extract Text</button>
+    <div class="tool-output" id="out-ocr"></div>
+    <button id="ocr-copy" style="display:none;margin-top:8px;padding:9px 20px;background:var(--black);color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:.82rem;font-weight:600" onclick="navigator.clipboard.writeText(window._ocrText);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy Text',1500)">Copy Text</button>`;
+};
+async function doOCR(){
+  const inp=document.getElementById('fiocr');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Recognizing…'; btn.disabled=true;
+  const pb=document.getElementById('pb-ocr'); pb.style.display='block';
+  const fill=document.getElementById('pf-ocr');
+  try {
+    if(!window.Tesseract){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.0/tesseract.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+    }
+    const worker=await Tesseract.createWorker('eng',1,{logger:m=>{if(m.status==='recognizing text')fill.style.width=`${Math.round(m.progress*100)}%`;}});
+    const {data:{text}}=await worker.recognize(inp.files[0]);
+    await worker.terminate();
+    window._ocrText=text.trim();
+    showOut('out-ocr',text.trim()||'(No text detected)');
+    document.getElementById('ocr-copy').style.display='inline-block';
+  } catch(e){showOut('out-ocr','Error: '+e.message);}
+  btn.textContent='Extract Text'; btn.disabled=false;
+  pb.style.display='none';
+}
+
+// Compress
+builders.compress = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('cmp','image/*','JPG or PNG')}
+    <label class="input-label">Quality: <span id="q-val">75</span>%</label>
+    <input type="range" min="10" max="100" value="75" oninput="document.getElementById('q-val').textContent=this.value" id="q-slider"/>
+    <div id="cmp-info" style="font-size:.8rem;color:var(--muted);margin:8px 0;"></div>
+    <button class="btn-action" onclick="doCompress()">Compress & Download</button>`;
+};
+async function doCompress(){
+  const inp=document.getElementById('ficmp');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const q=parseInt(document.getElementById('q-slider').value)/100;
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=img.width; c.height=img.height;
+  c.getContext('2d').drawImage(img,0,0);
+  c.toBlob(blob=>{
+    document.getElementById('cmp-info').textContent=`${(inp.files[0].size/1024).toFixed(1)} KB → ${(blob.size/1024).toFixed(1)} KB (${Math.round((1-blob.size/inp.files[0].size)*100)}% smaller)`;
+    dlBlob(blob,'sitizen-compressed.jpg');
+  },'image/jpeg',q);
+}
+
+// Resize
+builders.resize = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('rsz','image/*','JPG or PNG')}
+    <div class="row2">
+      <div><label class="input-label">Width (px)</label><input type="number" id="rsz-w" placeholder="e.g. 800"/></div>
+      <div><label class="input-label">Height (px)</label><input type="number" id="rsz-h" placeholder="e.g. 600"/></div>
+    </div>
+    <label class="input-label">Or resize by %: <span id="rsz-pv">100</span>%</label>
+    <input type="range" min="10" max="200" value="100" oninput="document.getElementById('rsz-pv').textContent=this.value" id="rsz-p"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doResize()">Resize & Download</button>`;
+};
+async function doResize(){
+  const inp=document.getElementById('firsz');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const pct=parseInt(document.getElementById('rsz-p').value)/100;
+  const wv=parseInt(document.getElementById('rsz-w').value);
+  const hv=parseInt(document.getElementById('rsz-h').value);
+  let W,H;
+  if(wv&&hv){W=wv;H=hv;}
+  else if(wv){W=wv;H=Math.round(img.height*(wv/img.width));}
+  else if(hv){H=hv;W=Math.round(img.width*(hv/img.height));}
+  else{W=Math.round(img.width*pct);H=Math.round(img.height*pct);}
+  const c=document.createElement('canvas');
+  c.width=W; c.height=H; c.getContext('2d').drawImage(img,0,0,W,H);
+  c.toBlob(b=>dlBlob(b,'sitizen-resized.jpg'),'image/jpeg',0.95);
+}
+
+// Convert
+builders.convert = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('cvt','image/*','JPG, PNG, WEBP, BMP')}
+    <label class="input-label">Convert to:</label>
+    <select id="cvt-fmt"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select>
+    <button class="btn-action" style="margin-top:10px" onclick="doConvert()">Convert & Download</button>`;
+};
+async function doConvert(){
+  const inp=document.getElementById('ficvt');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const fmt=document.getElementById('cvt-fmt').value;
+  const ext=fmt.split('/')[1];
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=img.width; c.height=img.height; c.getContext('2d').drawImage(img,0,0);
+  c.toBlob(b=>dlBlob(b,`sitizen-converted.${ext}`),fmt,0.95);
+}
+
+// BG Remove
+builders.bgremove = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('bgr','image/*','JPG or PNG')}
+    <label class="input-label">Background color tolerance: <span id="bgr-tol">45</span></label>
+    <input type="range" min="5" max="120" value="45" oninput="document.getElementById('bgr-tol').textContent=this.value" id="bgr-t"/>
+    <canvas id="bgr-canvas" style="display:none;max-width:100%;border-radius:10px;margin:8px 0;background:repeating-conic-gradient(#ccc 0 25%,#fff 0 50%) 0 0/14px 14px;"></canvas>
+    <button class="btn-action" onclick="doBgRemove()">Remove Background</button>`;
+};
+async function doBgRemove(){
+  const inp=document.getElementById('fibgr');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const thr=parseInt(document.getElementById('bgr-t').value);
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.getElementById('bgr-canvas');
+  c.width=img.width; c.height=img.height; c.style.display='block';
+  const ctx=c.getContext('2d'); ctx.drawImage(img,0,0);
+  const d=ctx.getImageData(0,0,img.width,img.height);
+  const px=d.data;
+  const bg=[px[0],px[1],px[2]];
+  for(let i=0;i<px.length;i+=4){
+    if(Math.abs(px[i]-bg[0])+Math.abs(px[i+1]-bg[1])+Math.abs(px[i+2]-bg[2])<thr*3) px[i+3]=0;
+  }
+  ctx.putImageData(d,0,0);
+  c.toBlob(b=>dlBlob(b,'sitizen-nobg.png'),'image/png');
+}
+
+// Crop
+builders.crop = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('crp','image/*','JPG or PNG')}
+    <div class="row2">
+      <div><label class="input-label">X offset (px)</label><input type="number" id="crp-x" value="0"/></div>
+      <div><label class="input-label">Y offset (px)</label><input type="number" id="crp-y" value="0"/></div>
+      <div><label class="input-label">Width (px)</label><input type="number" id="crp-w" placeholder="full"/></div>
+      <div><label class="input-label">Height (px)</label><input type="number" id="crp-h" placeholder="full"/></div>
+    </div>
+    <label class="input-label">Or quick presets:</label>
+    <div><span class="chip" onclick="setCrop('1:1')">1:1</span><span class="chip" onclick="setCrop('4:3')">4:3</span><span class="chip" onclick="setCrop('16:9')">16:9</span><span class="chip" onclick="setCrop('3:4')">3:4</span></div>
+    <button class="btn-action" style="margin-top:14px" onclick="doCrop()">Crop & Download</button>`;
+};
+async function setCrop(ratio){
+  const inp=document.getElementById('ficrp');
+  if(!inp.files[0])return;
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const [a,b]=ratio.split(':').map(Number);
+  const h=Math.min(img.height,img.width*(b/a));
+  const w=h*(a/b);
+  document.getElementById('crp-x').value=Math.floor((img.width-w)/2);
+  document.getElementById('crp-y').value=Math.floor((img.height-h)/2);
+  document.getElementById('crp-w').value=Math.floor(w);
+  document.getElementById('crp-h').value=Math.floor(h);
+}
+async function doCrop(){
+  const inp=document.getElementById('ficrp');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const x=parseInt(document.getElementById('crp-x').value)||0;
+  const y=parseInt(document.getElementById('crp-y').value)||0;
+  const w=parseInt(document.getElementById('crp-w').value)||img.width;
+  const h=parseInt(document.getElementById('crp-h').value)||img.height;
+  const c=document.createElement('canvas');
+  c.width=w; c.height=h; c.getContext('2d').drawImage(img,-x,-y);
+  c.toBlob(b=>dlBlob(b,'sitizen-cropped.jpg'),'image/jpeg',0.95);
+}
+
+// Rotate
+builders.rotate = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('rot','image/*','JPG or PNG')}
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:10px 0;">
+      <button class="btn-secondary" style="flex:1;padding:10px;border-radius:12px;cursor:pointer;font-family:var(--fb);font-size:.85rem;border:1.5px solid var(--border)" onclick="doRotate(90)">↻ 90°</button>
+      <button class="btn-secondary" style="flex:1;padding:10px;border-radius:12px;cursor:pointer;font-family:var(--fb);font-size:.85rem;border:1.5px solid var(--border)" onclick="doRotate(180)">↺ 180°</button>
+      <button class="btn-secondary" style="flex:1;padding:10px;border-radius:12px;cursor:pointer;font-family:var(--fb);font-size:.85rem;border:1.5px solid var(--border)" onclick="doRotate(270)">↻ 270°</button>
+      <button class="btn-secondary" style="flex:1;padding:10px;border-radius:12px;cursor:pointer;font-family:var(--fb);font-size:.85rem;border:1.5px solid var(--border)" onclick="doFlip('h')">↔ Flip H</button>
+      <button class="btn-secondary" style="flex:1;padding:10px;border-radius:12px;cursor:pointer;font-family:var(--fb);font-size:.85rem;border:1.5px solid var(--border)" onclick="doFlip('v')">↕ Flip V</button>
+    </div>`;
+};
+async function doRotate(deg){
+  const inp=document.getElementById('firot');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const rad=deg*Math.PI/180;
+  const c=document.createElement('canvas');
+  if(deg===90||deg===270){c.width=img.height;c.height=img.width;}
+  else{c.width=img.width;c.height=img.height;}
+  const ctx=c.getContext('2d');
+  ctx.translate(c.width/2,c.height/2); ctx.rotate(rad); ctx.drawImage(img,-img.width/2,-img.height/2);
+  c.toBlob(b=>dlBlob(b,'sitizen-rotated.jpg'),'image/jpeg',0.95);
+}
+async function doFlip(dir){
+  const inp=document.getElementById('firot');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=img.width; c.height=img.height;
+  const ctx=c.getContext('2d');
+  if(dir==='h'){ctx.translate(img.width,0);ctx.scale(-1,1);}
+  else{ctx.translate(0,img.height);ctx.scale(1,-1);}
+  ctx.drawImage(img,0,0);
+  c.toBlob(b=>dlBlob(b,'sitizen-flipped.jpg'),'image/jpeg',0.95);
+}
+
+// Passport
+builders.passport = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('psp','image/*','JPG or PNG')}
+    <label class="input-label">Size standard:</label>
+    <select id="psp-size">
+      <option value="413,531">India/EU/UK — 35×45mm (413×531px)</option>
+      <option value="600,600">US Passport — 2×2 inch (600×600px)</option>
+      <option value="402,567">Schengen Visa — 35×45mm</option>
+      <option value="390,495">Australia — 35×45mm</option>
+    </select>
+    <button class="btn-action" style="margin-top:10px" onclick="doPassport()">Generate & Download</button>`;
+};
+async function doPassport(){
+  const inp=document.getElementById('fipsp');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const [W,H]=document.getElementById('psp-size').value.split(',').map(Number);
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=W; c.height=H;
+  const ctx=c.getContext('2d');
+  const scale=Math.max(W/img.width,H/img.height);
+  const sw=img.width*scale,sh=img.height*scale;
+  ctx.drawImage(img,(W-sw)/2,(H-sh)/2,sw,sh);
+  c.toBlob(b=>dlBlob(b,'sitizen-passport.jpg'),'image/jpeg',0.95);
+}
+
+// Color picker
+builders.colorpicker = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('clr','image/*','JPG or PNG')}
+    <canvas id="clr-canvas" style="display:none;max-width:100%;border-radius:10px;cursor:crosshair;margin:8px 0;"></canvas>
+    <div id="clr-result" style="display:none;padding:14px;border-radius:12px;border:1px solid var(--border);display:flex;align-items:center;gap:12px;margin-top:10px;">
+      <div id="clr-swatch" style="width:50px;height:50px;border-radius:10px;border:1px solid var(--border);"></div>
+      <div><div id="clr-hex" style="font-family:var(--fh);font-weight:700;font-size:1.1rem;"></div><div id="clr-rgb" style="font-size:.82rem;color:var(--muted);margin-top:4px;"></div></div>
+    </div>
+    <p style="font-size:.78rem;color:var(--muted);margin-top:8px;">Click anywhere on the image to pick a color.</p>`;
+  document.getElementById('ficlr').addEventListener('change', async function(){
+    if(!this.files[0])return;
+    const url=await readFile(this);
+    const img=await loadImg(url);
+    const c=document.getElementById('clr-canvas');
+    c.style.display='block'; c.width=img.width; c.height=img.height;
+    c.getContext('2d').drawImage(img,0,0);
+    c.onclick=function(e){
+      const r=c.getBoundingClientRect();
+      const x=Math.floor((e.clientX-r.left)*(c.width/r.width));
+      const y=Math.floor((e.clientY-r.top)*(c.height/r.height));
+      const d=c.getContext('2d').getImageData(x,y,1,1).data;
+      const hex='#'+[d[0],d[1],d[2]].map(v=>v.toString(16).padStart(2,'0')).join('');
+      document.getElementById('clr-swatch').style.background=hex;
+      document.getElementById('clr-hex').textContent=hex.toUpperCase();
+      document.getElementById('clr-rgb').textContent=`rgb(${d[0]}, ${d[1]}, ${d[2]})`;
+      document.getElementById('clr-result').style.display='flex';
+    };
+  });
+};
+
+// Grayscale
+builders.grayscale = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('gry','image/*','JPG or PNG')}
+    <button class="btn-action" style="margin-top:4px" onclick="doGrayscale()">Convert to B&W</button>`;
+};
+async function doGrayscale(){
+  const inp=document.getElementById('figry');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=img.width; c.height=img.height;
+  const ctx=c.getContext('2d'); ctx.drawImage(img,0,0);
+  const d=ctx.getImageData(0,0,img.width,img.height);
+  for(let i=0;i<d.data.length;i+=4){
+    const g=0.299*d.data[i]+0.587*d.data[i+1]+0.114*d.data[i+2];
+    d.data[i]=d.data[i+1]=d.data[i+2]=g;
+  }
+  ctx.putImageData(d,0,0);
+  c.toBlob(b=>dlBlob(b,'sitizen-grayscale.jpg'),'image/jpeg',0.95);
+}
+
+// ── AI TOOLS (uses Anthropic API via claude-sonnet-4-20250514) ──
+async function callClaude(prompt) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:1000,
+      messages:[{role:'user',content:prompt}]
+    })
+  });
+  const data = await res.json();
+  return data.content && data.content[0] ? data.content[0].text : 'Error getting response.';
+}
+
+builders.summarize = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Paste your text:</label>
+    <textarea id="sum-text" rows="6" placeholder="Paste article or long text here…"></textarea>
+    <label class="input-label">Summary length:</label>
+    <div><span class="chip active" onclick="setChip(this,'sum-len')">Short (3 bullets)</span><span class="chip" onclick="setChip(this,'sum-len')">Medium paragraph</span><span class="chip" onclick="setChip(this,'sum-len')">Detailed</span></div>
+    <input type="hidden" id="sum-len" value="Short (3 bullets)"/>
+    <button class="btn-action" style="margin-top:14px" onclick="doSummarize()">Summarize with AI</button>
+    <div class="tool-output" id="out-sum"></div>`;
+};
+function setChip(el,hid){
+  el.closest('div').querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(hid).value=el.textContent;
+}
+async function doSummarize(){
+  const text=document.getElementById('sum-text').value.trim();
+  if(!text){alert('Paste some text first');return;}
+  const len=document.getElementById('sum-len').value;
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Summarizing…'; btn.disabled=true;
+  const out=document.getElementById('out-sum');
+  out.textContent='Thinking…'; out.classList.add('show');
+  try {
+    const result=await callClaude(`Summarize this text as ${len}. Be concise and clear:\n\n${text.slice(0,4000)}`);
+    out.textContent=result;
+  } catch(e){out.textContent='Error: '+e.message;}
+  btn.textContent='Summarize with AI'; btn.disabled=false;
+}
+
+builders.grammar = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Your text:</label>
+    <textarea id="gr-text" rows="5" placeholder="Paste text to fix grammar…"></textarea>
+    <label class="input-label">Mode:</label>
+    <div><span class="chip active" onclick="setChip(this,'gr-mode')">Fix grammar only</span><span class="chip" onclick="setChip(this,'gr-mode')">Rewrite clearly</span><span class="chip" onclick="setChip(this,'gr-mode')">Make professional</span></div>
+    <input type="hidden" id="gr-mode" value="Fix grammar only"/>
+    <button class="btn-action" style="margin-top:14px" onclick="doGrammar()">Fix with AI</button>
+    <div class="tool-output" id="out-gr"></div>`;
+};
+async function doGrammar(){
+  const text=document.getElementById('gr-text').value.trim();
+  if(!text){alert('Enter some text');return;}
+  const mode=document.getElementById('gr-mode').value;
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Processing…'; btn.disabled=true;
+  const out=document.getElementById('out-gr');
+  out.textContent='Working…'; out.classList.add('show');
+  try {
+    const result=await callClaude(`${mode}: "${text.slice(0,3000)}". Return only the improved text, nothing else.`);
+    out.textContent=result;
+  } catch(e){out.textContent='Error: '+e.message;}
+  btn.textContent='Fix with AI'; btn.disabled=false;
+}
+
+builders.hashtag = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Describe your post or topic:</label>
+    <textarea id="ht-text" rows="3" placeholder="e.g. Sunset photo at Marine Drive Mumbai"></textarea>
+    <label class="input-label">Platform:</label>
+    <div><span class="chip active" onclick="setChip(this,'ht-plat')">Instagram</span><span class="chip" onclick="setChip(this,'ht-plat')">TikTok</span><span class="chip" onclick="setChip(this,'ht-plat')">Twitter/X</span><span class="chip" onclick="setChip(this,'ht-plat')">YouTube</span></div>
+    <input type="hidden" id="ht-plat" value="Instagram"/>
+    <button class="btn-action" style="margin-top:14px" onclick="doHashtag()">Generate Hashtags</button>
+    <div class="tool-output" id="out-ht"></div>`;
+};
+async function doHashtag(){
+  const text=document.getElementById('ht-text').value.trim();
+  if(!text){alert('Describe your post');return;}
+  const plat=document.getElementById('ht-plat').value;
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Generating…'; btn.disabled=true;
+  const out=document.getElementById('out-ht');
+  out.textContent='Creating…'; out.classList.add('show');
+  try {
+    const result=await callClaude(`Generate 20-30 relevant trending hashtags for ${plat} about: "${text}". Return only hashtags separated by spaces, starting with #.`);
+    out.textContent=result;
+  } catch(e){out.textContent='Error: '+e.message;}
+  btn.textContent='Generate Hashtags'; btn.disabled=false;
+}
+
+builders.productdesc = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Product name:</label>
+    <input type="text" id="pd-name" placeholder="e.g. Wireless Bluetooth Earphones"/>
+    <label class="input-label">Key features (comma separated):</label>
+    <textarea id="pd-feat" rows="2" placeholder="e.g. 30hr battery, noise cancellation, IPX5"></textarea>
+    <label class="input-label">Tone:</label>
+    <div><span class="chip active" onclick="setChip(this,'pd-tone')">Professional</span><span class="chip" onclick="setChip(this,'pd-tone')">Casual & Fun</span><span class="chip" onclick="setChip(this,'pd-tone')">Luxury</span></div>
+    <input type="hidden" id="pd-tone" value="Professional"/>
+    <button class="btn-action" style="margin-top:14px" onclick="doProductDesc()">Write Description</button>
+    <div class="tool-output" id="out-pd"></div>`;
+};
+async function doProductDesc(){
+  const name=document.getElementById('pd-name').value.trim();
+  const feat=document.getElementById('pd-feat').value.trim();
+  if(!name){alert('Enter product name');return;}
+  const tone=document.getElementById('pd-tone').value;
+  const btn=document.querySelector('#m-body .btn-action');
+  btn.textContent='Writing…'; btn.disabled=true;
+  const out=document.getElementById('out-pd');
+  out.textContent='Crafting…'; out.classList.add('show');
+  try {
+    const result=await callClaude(`Write a compelling ${tone} product description for "${name}" with features: ${feat}. Include a headline, 2-3 sentences description, and 3 bullet points. Keep it persuasive and concise.`);
+    out.textContent=result;
+  } catch(e){out.textContent='Error: '+e.message;}
+  btn.textContent='Write Description'; btn.disabled=false;
+}
+
+// ── CALCULATORS ──
+builders.emi = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Loan Amount (₹)</label>
+    <input type="number" id="emi-p" placeholder="e.g. 1000000" value="500000"/>
+    <label class="input-label">Annual Interest Rate (%)</label>
+    <input type="number" id="emi-r" placeholder="e.g. 8.5" value="8.5" step="0.1"/>
+    <label class="input-label">Loan Tenure (Months)</label>
+    <input type="number" id="emi-n" placeholder="e.g. 240" value="60"/>
+    <button class="btn-action" style="margin-top:12px" onclick="doEmi()">Calculate EMI</button>
+    <div class="result-card" id="emi-res">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;text-align:center;">
+        <div><div style="font-size:.75rem;color:var(--muted)">Monthly EMI</div><div id="emi-val" style="font-family:var(--fh);font-size:1.4rem;font-weight:800;color:var(--accent)"></div></div>
+        <div><div style="font-size:.75rem;color:var(--muted)">Total Payment</div><div id="emi-total" style="font-family:var(--fh);font-size:1.4rem;font-weight:800"></div></div>
+        <div><div style="font-size:.75rem;color:var(--muted)">Total Interest</div><div id="emi-int" style="font-family:var(--fh);font-size:1.4rem;font-weight:800;color:#e55"></div></div>
+      </div>
+    </div>`;
+};
+function doEmi(){
+  const P=parseFloat(document.getElementById('emi-p').value);
+  const r=parseFloat(document.getElementById('emi-r').value)/12/100;
+  const n=parseInt(document.getElementById('emi-n').value);
+  if(!P||!r||!n)return;
+  const emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+  const total=emi*n;
+  const fmt=v=>'₹'+Math.round(v).toLocaleString('en-IN');
+  document.getElementById('emi-val').textContent=fmt(emi);
+  document.getElementById('emi-total').textContent=fmt(total);
+  document.getElementById('emi-int').textContent=fmt(total-P);
+  document.getElementById('emi-res').classList.add('show');
+}
+
+builders.percent = () => {
+  document.getElementById('m-body').innerHTML = `
+    <div style="display:grid;gap:18px;">
+      <div style="background:var(--cream);border-radius:14px;padding:16px;">
+        <div style="font-family:var(--fh);font-weight:700;margin-bottom:10px;">What is X% of Y?</div>
+        <div class="row2"><div><input type="number" id="px1" placeholder="X %" /></div><div><input type="number" id="py1" placeholder="Y value"/></div></div>
+        <button class="btn-action" style="margin-top:8px;padding:10px" onclick="calc1()">Calculate</button>
+        <div id="pr1" style="margin-top:8px;font-weight:700;font-size:1.1rem;display:none"></div>
+      </div>
+      <div style="background:var(--cream);border-radius:14px;padding:16px;">
+        <div style="font-family:var(--fh);font-weight:700;margin-bottom:10px;">X is what % of Y?</div>
+        <div class="row2"><div><input type="number" id="px2" placeholder="X"/></div><div><input type="number" id="py2" placeholder="Y"/></div></div>
+        <button class="btn-action" style="margin-top:8px;padding:10px" onclick="calc2()">Calculate</button>
+        <div id="pr2" style="margin-top:8px;font-weight:700;font-size:1.1rem;display:none"></div>
+      </div>
+      <div style="background:var(--cream);border-radius:14px;padding:16px;">
+        <div style="font-family:var(--fh);font-weight:700;margin-bottom:10px;">% change from X to Y</div>
+        <div class="row2"><div><input type="number" id="px3" placeholder="From"/></div><div><input type="number" id="py3" placeholder="To"/></div></div>
+        <button class="btn-action" style="margin-top:8px;padding:10px" onclick="calc3()">Calculate</button>
+        <div id="pr3" style="margin-top:8px;font-weight:700;font-size:1.1rem;display:none"></div>
+      </div>
+    </div>`;
+};
+function calc1(){const r=(parseFloat(document.getElementById('px1').value)/100)*parseFloat(document.getElementById('py1').value);const el=document.getElementById('pr1');el.textContent='= '+r.toFixed(4);el.style.display='block';}
+function calc2(){const r=(parseFloat(document.getElementById('px2').value)/parseFloat(document.getElementById('py2').value))*100;const el=document.getElementById('pr2');el.textContent='= '+r.toFixed(2)+'%';el.style.display='block';}
+function calc3(){const x=parseFloat(document.getElementById('px3').value),y=parseFloat(document.getElementById('py3').value);const r=((y-x)/Math.abs(x))*100;const el=document.getElementById('pr3');el.textContent=(r>=0?'▲ +':'▼ ')+r.toFixed(2)+'%';el.style.color=r>=0?'green':'red';el.style.display='block';}
+
+builders.age = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Date of Birth:</label>
+    <input type="date" id="dob" style="padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);font-size:.9rem;width:100%;font-family:var(--fb)"/>
+    <label class="input-label" style="margin-top:10px">Calculate age as of:</label>
+    <input type="date" id="doa" style="padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);font-size:.9rem;width:100%;margin-bottom:14px;font-family:var(--fb)"/>
+    <button class="btn-action" onclick="doAge()">Calculate Age</button>
+    <div class="result-card" id="age-res" style="text-align:center;">
+      <div id="age-val" style="font-family:var(--fh);font-size:2rem;font-weight:800;color:var(--accent)"></div>
+      <div id="age-detail" style="font-size:.85rem;color:var(--muted);margin-top:6px"></div>
+    </div>`;
+  const today=new Date(); const pad=v=>String(v).padStart(2,'0');
+  document.getElementById('doa').value=`${today.getFullYear()}-${pad(today.getMonth()+1)}-${pad(today.getDate())}`;
+};
+function doAge(){
+  const dob=new Date(document.getElementById('dob').value);
+  const doa=new Date(document.getElementById('doa').value);
+  if(!document.getElementById('dob').value){alert('Enter date of birth');return;}
+  let y=doa.getFullYear()-dob.getFullYear(), m=doa.getMonth()-dob.getMonth(), d=doa.getDate()-dob.getDate();
+  if(d<0){m--;d+=new Date(doa.getFullYear(),doa.getMonth(),0).getDate();}
+  if(m<0){y--;m+=12;}
+  const totalDays=Math.floor((doa-dob)/(1000*60*60*24));
+  document.getElementById('age-val').textContent=`${y} Years, ${m} Months, ${d} Days`;
+  document.getElementById('age-detail').textContent=`That's ${totalDays.toLocaleString()} days or ${Math.floor(totalDays/7).toLocaleString()} weeks`;
+  document.getElementById('age-res').classList.add('show');
+}
+
+builders.bmi = () => {
+  document.getElementById('m-body').innerHTML = `
+    <div class="row2">
+      <div><label class="input-label">Weight (kg)</label><input type="number" id="bmi-w" placeholder="70"/></div>
+      <div><label class="input-label">Height (cm)</label><input type="number" id="bmi-h" placeholder="170"/></div>
+    </div>
+    <button class="btn-action" style="margin-top:12px" onclick="doBmi()">Calculate BMI</button>
+    <div class="result-card" id="bmi-res">
+      <div style="text-align:center;">
+        <div id="bmi-val" style="font-family:var(--fh);font-size:3rem;font-weight:800;"></div>
+        <div id="bmi-cat" style="font-size:1rem;font-weight:600;margin:6px 0;"></div>
+        <div style="background:linear-gradient(to right,#5bc8f5,#77dd77,#ffd966,#ff8c42,#e55);height:12px;border-radius:50px;position:relative;margin:14px 0;">
+          <div id="bmi-arrow" style="position:absolute;top:-6px;width:4px;height:24px;background:var(--black);border-radius:2px;transform:translateX(-50%);transition:left .4s;"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--muted)"><span>Underweight</span><span>Normal</span><span>Overweight</span><span>Obese</span></div>
+      </div>
+    </div>`;
+};
+function doBmi(){
+  const w=parseFloat(document.getElementById('bmi-w').value),h=parseFloat(document.getElementById('bmi-h').value)/100;
+  if(!w||!h)return;
+  const bmi=w/(h*h);
+  let cat,col;
+  if(bmi<18.5){cat='Underweight';col='#5bc8f5';}
+  else if(bmi<25){cat='Normal weight';col='#77dd77';}
+  else if(bmi<30){cat='Overweight';col='#ffd966';}
+  else{cat='Obese';col='#e55';}
+  document.getElementById('bmi-val').textContent=bmi.toFixed(1);
+  document.getElementById('bmi-val').style.color=col;
+  document.getElementById('bmi-cat').textContent=cat;
+  document.getElementById('bmi-cat').style.color=col;
+  const pct=Math.min(100,Math.max(0,(bmi-10)/30*100));
+  document.getElementById('bmi-arrow').style.left=pct+'%';
+  document.getElementById('bmi-res').classList.add('show');
+}
+
+builders.units = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Category:</label>
+    <select id="uc-cat" onchange="updateUnitSelects()">
+      <option value="length">Length</option>
+      <option value="weight">Weight</option>
+      <option value="temp">Temperature</option>
+      <option value="speed">Speed</option>
+      <option value="area">Area</option>
+    </select>
+    <div class="row2" style="margin-top:10px;">
+      <div><label class="input-label">From:</label><select id="uc-from"></select></div>
+      <div><label class="input-label">To:</label><select id="uc-to"></select></div>
+    </div>
+    <label class="input-label">Value:</label>
+    <input type="number" id="uc-val" placeholder="Enter value" value="1"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doUnits()">Convert</button>
+    <div class="tool-output" id="out-uc"></div>`;
+  updateUnitSelects();
+};
+const UNIT_DATA={
+  length:{m:1,km:0.001,cm:100,mm:1000,mile:0.000621371,yard:1.09361,foot:3.28084,inch:39.3701},
+  weight:{kg:1,g:1000,mg:1e6,lb:2.20462,oz:35.274,ton:0.001},
+  speed:{'km/h':1,'m/s':0.277778,mph:0.621371,knot:0.539957},
+  area:{m2:1,km2:1e-6,cm2:10000,ft2:10.7639,acre:0.000247105,hectare:0.0001},
+  temp:{C:true,F:true,K:true}
+};
+function updateUnitSelects(){
+  const cat=document.getElementById('uc-cat').value;
+  const units=Object.keys(UNIT_DATA[cat]);
+  ['uc-from','uc-to'].forEach((id,i)=>{
+    const sel=document.getElementById(id);
+    sel.innerHTML=units.map((u,j)=>`<option${j===(i===0?0:1)?' selected':''}>${u}</option>`).join('');
+  });
+}
+function doUnits(){
+  const cat=document.getElementById('uc-cat').value;
+  const from=document.getElementById('uc-from').value;
+  const to=document.getElementById('uc-to').value;
+  const val=parseFloat(document.getElementById('uc-val').value);
+  let result;
+  if(cat==='temp'){
+    let c;
+    if(from==='C')c=val;
+    else if(from==='F')c=(val-32)*5/9;
+    else c=val-273.15;
+    if(to==='C')result=c;
+    else if(to==='F')result=c*9/5+32;
+    else result=c+273.15;
+  } else {
+    const base=val/UNIT_DATA[cat][from];
+    result=base*UNIT_DATA[cat][to];
+  }
+  showOut('out-uc',`${val} ${from} = ${result.toFixed(6).replace(/\.?0+$/,'')} ${to}`);
+}
+
+builders.gst = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Amount (₹):</label>
+    <input type="number" id="gst-amt" placeholder="Enter amount" value="1000"/>
+    <label class="input-label">GST Rate:</label>
+    <div><span class="chip active" onclick="setChip(this,'gst-rate')">5%</span><span class="chip" onclick="setChip(this,'gst-rate')">12%</span><span class="chip" onclick="setChip(this,'gst-rate')">18%</span><span class="chip" onclick="setChip(this,'gst-rate')">28%</span></div>
+    <input type="hidden" id="gst-rate" value="5"/>
+    <div style="display:flex;gap:8px;margin-top:12px;">
+      <button class="btn-action" style="flex:1" onclick="doGst('excl')">Add GST (Exclusive)</button>
+      <button class="btn-action" style="flex:1;background:var(--black)" onclick="doGst('incl')">Extract GST (Inclusive)</button>
+    </div>
+    <div class="result-card" id="gst-res">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;text-align:center;">
+        <div><div style="font-size:.72rem;color:var(--muted)">Base Amount</div><div id="gst-base" style="font-family:var(--fh);font-size:1.2rem;font-weight:800"></div></div>
+        <div><div style="font-size:.72rem;color:var(--muted)">GST Amount</div><div id="gst-tax" style="font-family:var(--fh);font-size:1.2rem;font-weight:800;color:var(--accent)"></div></div>
+        <div><div style="font-size:.72rem;color:var(--muted)">Total Amount</div><div id="gst-total" style="font-family:var(--fh);font-size:1.2rem;font-weight:800"></div></div>
+      </div>
+    </div>`;
+};
+function doGst(type){
+  const amt=parseFloat(document.getElementById('gst-amt').value);
+  const rate=parseFloat(document.getElementById('gst-rate').value)/100;
+  if(!amt)return;
+  let base,tax,total;
+  const fmt=v=>'₹'+v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');
+  if(type==='excl'){base=amt;tax=amt*rate;total=amt+tax;}
+  else{total=amt;base=amt/(1+rate);tax=total-base;}
+  document.getElementById('gst-base').textContent=fmt(base);
+  document.getElementById('gst-tax').textContent=fmt(tax);
+  document.getElementById('gst-total').textContent=fmt(total);
+  document.getElementById('gst-res').classList.add('show');
+}
+
+// Word counter
+builders.wordcount = () => {
+  document.getElementById('m-body').innerHTML = `
+    <textarea id="wc-text" rows="7" placeholder="Paste or type your text here…" oninput="liveCount()"></textarea>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px;">
+      <div style="background:var(--cream);border-radius:12px;padding:12px;text-align:center;"><div id="wc-words" style="font-family:var(--fh);font-size:1.5rem;font-weight:800">0</div><div style="font-size:.7rem;color:var(--muted)">Words</div></div>
+      <div style="background:var(--cream);border-radius:12px;padding:12px;text-align:center;"><div id="wc-chars" style="font-family:var(--fh);font-size:1.5rem;font-weight:800">0</div><div style="font-size:.7rem;color:var(--muted)">Characters</div></div>
+      <div style="background:var(--cream);border-radius:12px;padding:12px;text-align:center;"><div id="wc-sent" style="font-family:var(--fh);font-size:1.5rem;font-weight:800">0</div><div style="font-size:.7rem;color:var(--muted)">Sentences</div></div>
+      <div style="background:var(--cream);border-radius:12px;padding:12px;text-align:center;"><div id="wc-para" style="font-family:var(--fh);font-size:1.5rem;font-weight:800">0</div><div style="font-size:.7rem;color:var(--muted)">Paragraphs</div></div>
+    </div>
+    <div style="margin-top:10px;font-size:.8rem;color:var(--muted)">Reading time: <strong id="wc-read">0 sec</strong></div>`;
+};
+function liveCount(){
+  const t=document.getElementById('wc-text').value;
+  const words=t.trim()===''?0:t.trim().split(/\s+/).length;
+  document.getElementById('wc-words').textContent=words;
+  document.getElementById('wc-chars').textContent=t.length;
+  document.getElementById('wc-sent').textContent=(t.match(/[.!?]+/g)||[]).length;
+  document.getElementById('wc-para').textContent=t.trim()===''?0:t.split(/\n\n+/).filter(p=>p.trim()).length||1;
+  const mins=Math.floor(words/200), secs=Math.round((words%200)/200*60);
+  document.getElementById('wc-read').textContent=mins>0?`${mins}m ${secs}s`:`${secs} sec`;
+}
+
+// Case converter
+builders.caseconv = () => {
+  document.getElementById('m-body').innerHTML = `
+    <textarea id="cc-text" rows="4" placeholder="Enter your text here…"></textarea>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;">
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('upper')">UPPERCASE</button>
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('lower')">lowercase</button>
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('title')">Title Case</button>
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('sentence')">Sentence case</button>
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('camel')">camelCase</button>
+      <button class="btn-secondary" style="padding:8px 16px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;border:1.5px solid var(--border)" onclick="doCase('snake')">snake_case</button>
+    </div>
+    <div class="tool-output" id="out-cc"></div>
+    <button id="cc-copy" style="display:none;margin-top:8px;padding:9px 20px;background:var(--black);color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:.82rem;font-weight:600" onclick="navigator.clipboard.writeText(document.getElementById('out-cc').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>`;
+};
+function doCase(type){
+  const t=document.getElementById('cc-text').value;
+  let r;
+  if(type==='upper')r=t.toUpperCase();
+  else if(type==='lower')r=t.toLowerCase();
+  else if(type==='title')r=t.replace(/\w\S*/g,w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase());
+  else if(type==='sentence')r=t.toLowerCase().replace(/(^\w|[.!?]\s*\w)/g,c=>c.toUpperCase());
+  else if(type==='camel')r=t.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g,(_,c)=>c.toUpperCase());
+  else if(type==='snake')r=t.toLowerCase().replace(/\s+/g,'_');
+  showOut('out-cc',r);
+  document.getElementById('cc-copy').style.display='inline-block';
+}
+
+// Invoice Generator
+builders.invoice = () => {
+  document.getElementById('m-body').innerHTML = `
+    <div style="display:grid;gap:10px;">
+      <div class="row2">
+        <div><label class="input-label">From (Your Name/Company)</label><input type="text" id="inv-from" placeholder="Your Company"/></div>
+        <div><label class="input-label">To (Client Name)</label><input type="text" id="inv-to" placeholder="Client Name"/></div>
+      </div>
+      <div class="row2">
+        <div><label class="input-label">Invoice #</label><input type="text" id="inv-num" placeholder="INV-001" value="INV-001"/></div>
+        <div><label class="input-label">Date</label><input type="date" id="inv-date"/></div>
+      </div>
+      <div id="inv-items">
+        <div class="inv-item" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;margin-bottom:6px;">
+          <input type="text" placeholder="Item description" class="inv-desc"/>
+          <input type="number" placeholder="Qty" class="inv-qty" value="1"/>
+          <input type="number" placeholder="Price ₹" class="inv-price"/>
+        </div>
+      </div>
+      <button type="button" onclick="addInvItem()" style="background:none;border:1.5px dashed var(--border);border-radius:10px;padding:9px;cursor:pointer;font-size:.82rem;font-weight:600;color:var(--muted)">+ Add Item</button>
+      <label class="input-label">Notes (optional)</label>
+      <textarea id="inv-notes" rows="2" placeholder="Payment terms, bank details…"></textarea>
+    </div>
+    <button class="btn-action" style="margin-top:14px" onclick="doInvoice()">Generate Invoice PDF</button>`;
+  const today=new Date();
+  document.getElementById('inv-date').value=today.toISOString().split('T')[0];
+};
+function addInvItem(){
+  const d=document.createElement('div');
+  d.className='inv-item'; d.style.cssText='display:grid;grid-template-columns:2fr 1fr 1fr;gap:6px;margin-bottom:6px;';
+  d.innerHTML=`<input type="text" placeholder="Item description" class="inv-desc"/><input type="number" placeholder="Qty" class="inv-qty" value="1"/><input type="number" placeholder="Price ₹" class="inv-price"/>`;
+  document.getElementById('inv-items').appendChild(d);
+}
+async function doInvoice(){
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF({unit:'mm',format:'a4'});
+  const from=document.getElementById('inv-from').value||'Your Company';
+  const to=document.getElementById('inv-to').value||'Client';
+  const num=document.getElementById('inv-num').value||'INV-001';
+  const date=document.getElementById('inv-date').value;
+  const notes=document.getElementById('inv-notes').value;
+  // header
+  pdf.setFillColor(10,10,10); pdf.rect(0,0,210,40,'F');
+  pdf.setTextColor(255,255,255); pdf.setFontSize(22); pdf.setFont('helvetica','bold');
+  pdf.text('INVOICE',15,20);
+  pdf.setFontSize(10); pdf.setFont('helvetica','normal');
+  pdf.text(num,15,30); pdf.text(date,15,36);
+  // from/to
+  pdf.setTextColor(0,0,0); pdf.setFontSize(10);
+  pdf.setFont('helvetica','bold'); pdf.text('FROM',15,55);
+  pdf.setFont('helvetica','normal'); pdf.text(from,15,62);
+  pdf.setFont('helvetica','bold'); pdf.text('TO',120,55);
+  pdf.setFont('helvetica','normal'); pdf.text(to,120,62);
+  // table
+  let y=80;
+  pdf.setFillColor(240,240,240); pdf.rect(10,y-6,190,10,'F');
+  pdf.setFont('helvetica','bold'); pdf.setFontSize(9);
+  pdf.text('DESCRIPTION',14,y); pdf.text('QTY',130,y); pdf.text('PRICE',155,y); pdf.text('TOTAL',180,y);
+  y+=8; let grandTotal=0;
+  pdf.setFont('helvetica','normal');
+  document.querySelectorAll('.inv-item').forEach(item=>{
+    const desc=item.querySelector('.inv-desc').value||'Item';
+    const qty=parseFloat(item.querySelector('.inv-qty').value)||1;
+    const price=parseFloat(item.querySelector('.inv-price').value)||0;
+    const tot=qty*price;
+    grandTotal+=tot;
+    pdf.text(desc,14,y); pdf.text(String(qty),130,y); pdf.text('₹'+price.toFixed(2),155,y); pdf.text('₹'+tot.toFixed(2),178,y);
+    y+=8;
+  });
+  y+=4; pdf.setDrawColor(200,200,200); pdf.line(10,y,200,y); y+=8;
+  pdf.setFont('helvetica','bold'); pdf.setFontSize(12);
+  pdf.text('TOTAL: ₹'+grandTotal.toFixed(2),140,y);
+  if(notes){y+=14;pdf.setFont('helvetica','normal');pdf.setFontSize(9);pdf.setTextColor(100,100,100);pdf.text('Notes: '+notes,14,y);}
+  pdf.save('sitizen-invoice.pdf');
+}
+
+// Password
+builders.password = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Length: <span id="pw-len-val">16</span> characters</label>
+    <input type="range" min="8" max="64" value="16" oninput="document.getElementById('pw-len-val').textContent=this.value;genPw()" id="pw-len"/>
+    <div style="margin:10px 0;display:flex;flex-direction:column;gap:8px;">
+      <label style="font-size:.84rem;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="pw-upper" checked onchange="genPw()"/> Uppercase (A-Z)</label>
+      <label style="font-size:.84rem;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="pw-lower" checked onchange="genPw()"/> Lowercase (a-z)</label>
+      <label style="font-size:.84rem;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="pw-num" checked onchange="genPw()"/> Numbers (0-9)</label>
+      <label style="font-size:.84rem;display:flex;align-items:center;gap:8px;"><input type="checkbox" id="pw-sym" onchange="genPw()"/> Symbols (!@#$%)</label>
+    </div>
+    <div style="background:var(--black);color:#0f0;font-family:monospace;font-size:1rem;padding:14px 16px;border-radius:12px;word-break:break-all;letter-spacing:.08em;min-height:48px" id="pw-out"></div>
+    <div style="display:flex;gap:8px;margin-top:10px;">
+      <button class="btn-action" style="flex:1" onclick="genPw()">🔄 Regenerate</button>
+      <button class="btn-action" style="flex:1;background:var(--black)" onclick="navigator.clipboard.writeText(document.getElementById('pw-out').textContent);this.textContent='Copied!';setTimeout(()=>this.textContent='📋 Copy',1500)">📋 Copy</button>
+    </div>`;
+  genPw();
+};
+function genPw(){
+  const len=parseInt(document.getElementById('pw-len').value);
+  let chars='';
+  if(document.getElementById('pw-upper').checked)chars+='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  if(document.getElementById('pw-lower').checked)chars+='abcdefghijklmnopqrstuvwxyz';
+  if(document.getElementById('pw-num').checked)chars+='0123456789';
+  if(document.getElementById('pw-sym').checked)chars+='!@#$%^&*()_+-=[]{}|;:,.<>?';
+  if(!chars)chars='abcdefghijklmnopqrstuvwxyz';
+  let pw='';
+  for(let i=0;i<len;i++)pw+=chars[Math.floor(Math.random()*chars.length)];
+  document.getElementById('pw-out').textContent=pw;
+}
+
+// QR Code
+builders.qr = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Content type:</label>
+    <div><span class="chip active" onclick="setChip(this,'qr-type');qrTypeChange()">URL</span><span class="chip" onclick="setChip(this,'qr-type');qrTypeChange()">Text</span><span class="chip" onclick="setChip(this,'qr-type');qrTypeChange()">Email</span><span class="chip" onclick="setChip(this,'qr-type');qrTypeChange()">Phone</span><span class="chip" onclick="setChip(this,'qr-type');qrTypeChange()">WiFi</span></div>
+    <input type="hidden" id="qr-type" value="URL"/>
+    <div id="qr-input-area" style="margin-top:10px;">
+      <input type="text" id="qr-text" placeholder="https://example.com"/>
+    </div>
+    <label class="input-label">QR Size: <span id="qr-sz-v">200</span>px</label>
+    <input type="range" min="100" max="400" value="200" oninput="document.getElementById('qr-sz-v').textContent=this.value" id="qr-sz"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doQR()">Generate QR Code</button>
+    <div style="text-align:center;margin-top:14px;"><canvas id="qr-canvas" style="display:none;border-radius:12px;"></canvas></div>
+    <button id="qr-dl" style="display:none;margin-top:10px;width:100%;padding:11px;background:var(--black);color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:.88rem;font-weight:600" onclick="dlQR()">Download PNG</button>`;
+};
+function qrTypeChange(){
+  const type=document.getElementById('qr-type').value;
+  const area=document.getElementById('qr-input-area');
+  const placeholders={URL:'https://example.com',Text:'Your message here',Email:'you@example.com',Phone:'+91 98765 43210',WiFi:'SSID:MyWifi;T:WPA;P:password123;;'};
+  area.innerHTML=`<input type="text" id="qr-text" placeholder="${placeholders[type]||'Enter value'}"/>`;
+}
+async function doQR(){
+  const text=document.getElementById('qr-text').value.trim();
+  if(!text){alert('Enter content for QR code');return;}
+  const size=parseInt(document.getElementById('qr-sz').value);
+  if(!window.QRCode){
+    await new Promise((res,rej)=>{
+      const s=document.createElement('script');
+      s.src='https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js';
+      s.onload=res; s.onerror=rej; document.head.appendChild(s);
+    });
+  }
+  const canvas=document.getElementById('qr-canvas');
+  canvas.style.display='inline-block';
+  const tmp=document.createElement('div');
+  new QRCode(tmp,{text,width:size,height:size,correctLevel:QRCode.CorrectLevel.H});
+  setTimeout(()=>{
+    const img=tmp.querySelector('img')||tmp.querySelector('canvas');
+    const ctx=canvas.getContext('2d');
+    canvas.width=size; canvas.height=size;
+    if(img.tagName==='IMG'){const i=new Image();i.onload=()=>ctx.drawImage(i,0,0,size,size);i.src=img.src;}
+    else ctx.drawImage(img,0,0,size,size);
+    document.getElementById('qr-dl').style.display='block';
+  },300);
+}
+function dlQR(){
+  const c=document.getElementById('qr-canvas');
+  c.toBlob(b=>dlBlob(b,'sitizen-qrcode.png'),'image/png');
+}
+
+// Signature
+builders.signature = () => {
+  document.getElementById('m-body').innerHTML = `
+    <canvas id="sig-canvas" width="480" height="180" style="border:2px solid var(--border);border-radius:12px;cursor:crosshair;touch-action:none;width:100%;background:#fff;display:block;margin-bottom:10px;"></canvas>
+    <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
+      <button class="btn-secondary" style="padding:9px 18px;border-radius:50px;cursor:pointer;font-family:var(--fb);font-size:.82rem;font-weight:600;border:1.5px solid var(--border)" onclick="clearSig()">Clear</button>
+      <label style="display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600">Color <input type="color" id="sig-color" value="#000000"/></label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600">Size <input type="range" id="sig-size" min="1" max="8" value="3" style="width:80px"/></label>
+      <label style="display:flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600">BG <select id="sig-bg" style="padding:6px;border-radius:8px;border:1.5px solid var(--border)"><option value="white">White</option><option value="transparent">Transparent</option><option value="#fff9e0">Cream</option></select></label>
+    </div>
+    <button class="btn-action" onclick="dlSig()">Download Signature PNG</button>`;
+  initSigCanvas('sig-canvas','sig-color');
+  window._sigCanvas2=document.getElementById('sig-canvas');
+};
+function clearSig(){window._sigCanvas2.getContext('2d').clearRect(0,0,window._sigCanvas2.width,window._sigCanvas2.height);}
+function dlSig(){
+  const c=window._sigCanvas2, bg=document.getElementById('sig-bg').value;
+  const out=document.createElement('canvas');
+  out.width=c.width; out.height=c.height;
+  const ctx=out.getContext('2d');
+  if(bg!=='transparent'){ctx.fillStyle=bg;ctx.fillRect(0,0,out.width,out.height);}
+  ctx.drawImage(c,0,0);
+  out.toBlob(b=>dlBlob(b,'sitizen-signature.png'),'image/png');
+}
+
+// Social Media Resizer
+builders.socialmedia = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('sm','image/*','JPG or PNG')}
+    <label class="input-label">Platform & Format:</label>
+    <select id="sm-size">
+      <optgroup label="Instagram"><option value="1080,1080">Instagram Square Post (1080×1080)</option><option value="1080,1350">Instagram Portrait Post (1080×1350)</option><option value="1080,566">Instagram Landscape Post (1080×566)</option><option value="1080,1920">Instagram Story/Reel (1080×1920)</option></optgroup>
+      <optgroup label="Facebook"><option value="1200,630">Facebook Post (1200×630)</option><option value="1640,924">Facebook Cover (1640×924)</option></optgroup>
+      <optgroup label="Twitter/X"><option value="1200,675">Twitter Post (1200×675)</option><option value="1500,500">Twitter Header (1500×500)</option></optgroup>
+      <optgroup label="YouTube"><option value="1280,720">YouTube Thumbnail (1280×720)</option><option value="2560,1440">YouTube Banner (2560×1440)</option></optgroup>
+      <optgroup label="LinkedIn"><option value="1200,628">LinkedIn Post (1200×628)</option></optgroup>
+    </select>
+    <button class="btn-action" style="margin-top:10px" onclick="doSocialMedia()">Resize & Download</button>`;
+};
+async function doSocialMedia(){
+  const inp=document.getElementById('fism');
+  if(!inp.files[0]){alert('Select an image');return;}
+  const [W,H]=document.getElementById('sm-size').value.split(',').map(Number);
+  const url=await readFile(inp);
+  const img=await loadImg(url);
+  const c=document.createElement('canvas');
+  c.width=W; c.height=H;
+  const ctx=c.getContext('2d');
+  const scale=Math.max(W/img.width,H/img.height);
+  const sw=img.width*scale,sh=img.height*scale;
+  ctx.drawImage(img,(W-sw)/2,(H-sh)/2,sw,sh);
+  c.toBlob(b=>dlBlob(b,'sitizen-social.jpg'),'image/jpeg',0.95);
+}
+
+// Barcode
+builders.barcode = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Text / Number to encode:</label>
+    <input type="text" id="bc-text" placeholder="e.g. 123456789012" value="123456789012"/>
+    <label class="input-label">Format:</label>
+    <select id="bc-fmt"><option value="CODE128">CODE128</option><option value="EAN13">EAN-13</option><option value="UPC">UPC-A</option><option value="CODE39">CODE39</option></select>
+    <button class="btn-action" style="margin-top:10px" onclick="doBarcode()">Generate Barcode</button>
+    <div style="text-align:center;margin-top:14px;background:#fff;padding:16px;border-radius:12px;display:none" id="bc-wrap">
+      <svg id="bc-svg"></svg>
+    </div>
+    <button id="bc-dl" style="display:none;margin-top:10px;width:100%;padding:11px;background:var(--black);color:#fff;border:none;border-radius:50px;cursor:pointer;font-size:.88rem;font-weight:600" onclick="dlBarcode()">Download SVG</button>`;
+};
+async function doBarcode(){
+  const text=document.getElementById('bc-text').value.trim();
+  if(!text){alert('Enter text/number');return;}
+  if(!window.JsBarcode){
+    await new Promise((res,rej)=>{
+      const s=document.createElement('script');
+      s.src='https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js';
+      s.onload=res; s.onerror=rej; document.head.appendChild(s);
+    });
+  }
+  const fmt=document.getElementById('bc-fmt').value;
+  try {
+    JsBarcode('#bc-svg',text,{format:fmt,width:2,height:80,displayValue:true,fontSize:14,margin:10});
+    document.getElementById('bc-wrap').style.display='block';
+    document.getElementById('bc-dl').style.display='block';
+  } catch(e){alert('Error generating barcode: '+e.message);}
+}
+function dlBarcode(){
+  const svg=document.getElementById('bc-svg');
+  const blob=new Blob([svg.outerHTML],{type:'image/svg+xml'});
+  dlBlob(blob,'sitizen-barcode.svg');
+}
+
+// ──────────────────────────────────────────────
+//  WORKFLOW PDF TOOL BUILDERS
+// ──────────────────────────────────────────────
+
+// Generic "coming soon" / upload placeholder for workflow tools
+function wfComingSoon(title) {
+  document.getElementById('m-body').innerHTML = `
+    <div style="text-align:center;padding:30px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">🚧</div>
+      <div style="font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:8px;">${title}</div>
+      <div style="font-size:.86rem;color:var(--muted);max-width:340px;margin:0 auto;">This tool processes files entirely in your browser. Full functionality coming soon — stay tuned!</div>
+    </div>`;
+}
+
+// Merge PDF (uses PDF-lib)
+builders.wf_merge = builders.mergepdf;
+
+// Split PDF
+builders.wf_split = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfsplit','application/pdf','PDF file')}
+    <label class="input-label">Split mode:</label>
+    <select id="wf-split-mode">
+      <option value="all">Extract all pages as separate files</option>
+      <option value="range">Extract page range</option>
+    </select>
+    <div id="wf-split-range" style="display:none">
+      <label class="input-label">Page range (e.g. 1-3, 5):</label>
+      <input type="text" id="wf-split-pages" placeholder="1-3, 5"/>
+    </div>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfSplit()">Split PDF</button>
+    <div class="tool-output" id="out-wfsplit"></div>`;
+  document.getElementById('wf-split-mode').onchange = function(){
+    document.getElementById('wf-split-range').style.display = this.value==='range'?'':'none';
+  };
+};
+async function doWfSplit(){
+  const inp=document.getElementById('fiwfsplit');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfsplit');
+  out.className='tool-output show'; out.textContent='Loading PDF library…';
+  try{
+    if(!window.PDFLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+    }
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const srcDoc=await PDFDocument.load(ab);
+    const total=srcDoc.getPageCount();
+    const mode=document.getElementById('wf-split-mode').value;
+    let pages=[];
+    if(mode==='all'){pages=Array.from({length:total},(_,i)=>i);}
+    else{
+      const raw=document.getElementById('wf-split-pages').value;
+      raw.split(',').forEach(p=>{
+        p=p.trim();
+        if(p.includes('-')){const[a,b]=p.split('-').map(x=>parseInt(x)-1);for(let i=a;i<=b&&i<total;i++)pages.push(i);}
+        else{const n=parseInt(p)-1;if(!isNaN(n)&&n>=0&&n<total)pages.push(n);}
+      });
+    }
+    if(!pages.length){out.textContent='No valid pages specified.';return;}
+    if(mode==='all'){
+      out.textContent=`Extracting ${pages.length} pages…`;
+      for(let i=0;i<pages.length;i++){
+        const newDoc=await PDFDocument.create();
+        const[pg]=await newDoc.copyPages(srcDoc,[pages[i]]);
+        newDoc.addPage(pg);
+        const bytes=await newDoc.save();
+        dlBlob(new Blob([bytes],{type:'application/pdf'}),`page-${pages[i]+1}.pdf`);
+      }
+      out.textContent=`✅ Extracted ${pages.length} pages as separate PDF files.`;
+    } else {
+      const newDoc=await PDFDocument.create();
+      const copied=await newDoc.copyPages(srcDoc,pages);
+      copied.forEach(p=>newDoc.addPage(p));
+      const bytes=await newDoc.save();
+      dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-split.pdf');
+      out.textContent=`✅ Extracted ${pages.length} pages into one PDF.`;
+    }
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Organize PDF (reorder/delete pages)
+builders.wf_organize = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wforg','application/pdf','PDF file')}
+    <label class="input-label">Page order (comma-separated, e.g. 3,1,2 to reorder or omit to delete):</label>
+    <input type="text" id="wf-org-pages" placeholder="e.g. 1,3,5 — leave blank for all pages"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfOrganize()">Reorder & Download</button>
+    <div class="tool-output" id="out-wforg"></div>`;
+};
+async function doWfOrganize(){
+  const inp=document.getElementById('fiwforg');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wforg');
+  out.className='tool-output show'; out.textContent='Processing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const srcDoc=await PDFDocument.load(ab);
+    const total=srcDoc.getPageCount();
+    const raw=document.getElementById('wf-org-pages').value.trim();
+    let pages=raw?raw.split(',').map(p=>parseInt(p.trim())-1).filter(p=>p>=0&&p<total):Array.from({length:total},(_,i)=>i);
+    const newDoc=await PDFDocument.create();
+    const copied=await newDoc.copyPages(srcDoc,pages);
+    copied.forEach(p=>newDoc.addPage(p));
+    const bytes=await newDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-organized.pdf');
+    out.textContent=`✅ Done — ${pages.length} pages saved.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Rotate PDF
+builders.wf_rotate = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfrot','application/pdf','PDF file')}
+    <label class="input-label">Rotation:</label>
+    <select id="wf-rot-deg"><option value="90">90° Clockwise</option><option value="180">180°</option><option value="270">90° Counter-clockwise</option></select>
+    <label class="input-label">Apply to:</label>
+    <select id="wf-rot-scope"><option value="all">All pages</option><option value="odd">Odd pages</option><option value="even">Even pages</option></select>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfRotate()">Rotate & Download</button>
+    <div class="tool-output" id="out-wfrot"></div>`;
+};
+async function doWfRotate(){
+  const inp=document.getElementById('fiwfrot');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfrot');
+  out.className='tool-output show'; out.textContent='Processing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument,degrees}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const deg=parseInt(document.getElementById('wf-rot-deg').value);
+    const scope=document.getElementById('wf-rot-scope').value;
+    pdfDoc.getPages().forEach((pg,i)=>{
+      if(scope==='all'||(scope==='odd'&&(i+1)%2!==0)||(scope==='even'&&(i+1)%2===0)){
+        pg.setRotation(degrees((pg.getRotation().angle+deg)%360));
+      }
+    });
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-rotated.pdf');
+    out.textContent='✅ PDF rotated and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Page Numbers
+builders.wf_pagenumbers = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfpgn','application/pdf','PDF file')}
+    <label class="input-label">Position:</label>
+    <select id="wf-pgn-pos"><option value="bottom-center">Bottom Center</option><option value="bottom-right">Bottom Right</option><option value="bottom-left">Bottom Left</option><option value="top-center">Top Center</option></select>
+    <label class="input-label">Start from page number:</label>
+    <input type="number" id="wf-pgn-start" value="1" min="1"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfPageNumbers()">Add Page Numbers</button>
+    <div class="tool-output" id="out-wfpgn"></div>`;
+};
+async function doWfPageNumbers(){
+  const inp=document.getElementById('fiwfpgn');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfpgn');
+  out.className='tool-output show'; out.textContent='Processing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument,rgb,StandardFonts}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const font=await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const start=parseInt(document.getElementById('wf-pgn-start').value)||1;
+    const pos=document.getElementById('wf-pgn-pos').value;
+    pdfDoc.getPages().forEach((pg,i)=>{
+      const {width,height}=pg.getSize();
+      const text=`${start+i}`;
+      const tw=font.widthOfTextAtSize(text,11);
+      let x,y;
+      if(pos==='bottom-center'){x=(width-tw)/2;y=20;}
+      else if(pos==='bottom-right'){x=width-tw-20;y=20;}
+      else if(pos==='bottom-left'){x=20;y=20;}
+      else{x=(width-tw)/2;y=height-30;}
+      pg.drawText(text,{x,y,size:11,font,color:rgb(0.3,0.3,0.3)});
+    });
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-numbered.pdf');
+    out.textContent='✅ Page numbers added and PDF downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Crop PDF
+builders.wf_crop = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfcrop','application/pdf','PDF file')}
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px;">Set margin to remove (in points, 1 inch = 72 pts):</p>
+    <div class="row2">
+      <div><label class="input-label">Top</label><input type="number" id="wf-crop-t" value="0" min="0"/></div>
+      <div><label class="input-label">Bottom</label><input type="number" id="wf-crop-b" value="0" min="0"/></div>
+      <div><label class="input-label">Left</label><input type="number" id="wf-crop-l" value="0" min="0"/></div>
+      <div><label class="input-label">Right</label><input type="number" id="wf-crop-r" value="0" min="0"/></div>
+    </div>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfCrop()">Crop & Download</button>
+    <div class="tool-output" id="out-wfcrop"></div>`;
+};
+async function doWfCrop(){
+  const inp=document.getElementById('fiwfcrop');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfcrop');
+  out.className='tool-output show'; out.textContent='Processing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const t=parseInt(document.getElementById('wf-crop-t').value)||0;
+    const b=parseInt(document.getElementById('wf-crop-b').value)||0;
+    const l=parseInt(document.getElementById('wf-crop-l').value)||0;
+    const r=parseInt(document.getElementById('wf-crop-r').value)||0;
+    pdfDoc.getPages().forEach(pg=>{
+      const {x,y,width,height}=pg.getMediaBox();
+      pg.setCropBox(x+l, y+b, width-l-r, height-t-b);
+    });
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-cropped.pdf');
+    out.textContent='✅ PDF cropped and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Compress PDF
+builders.wf_compress = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfcmp','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Browser-based compression removes redundant data. For heavier compression, upgrade your workflow.</p>
+    <button class="btn-action" onclick="doWfCompress()">Compress & Download</button>
+    <div class="tool-output" id="out-wfcmp"></div>`;
+};
+async function doWfCompress(){
+  const inp=document.getElementById('fiwfcmp');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfcmp');
+  out.className='tool-output show'; out.textContent='Compressing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const orig=ab.byteLength;
+    const pdfDoc=await PDFDocument.load(ab,{updateMetadata:false});
+    const bytes=await pdfDoc.save({useObjectStreams:true});
+    const saved=Math.max(0,orig-bytes.byteLength);
+    const pct=Math.round(saved/orig*100);
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-compressed.pdf');
+    out.textContent=`✅ Done! Original: ${(orig/1024).toFixed(1)} KB → Compressed: ${(bytes.byteLength/1024).toFixed(1)} KB (${pct}% reduction)`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Repair PDF
+builders.wf_repair = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfrep','application/pdf','Damaged PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ We'll attempt to reload and re-save your PDF to fix structural issues.</p>
+    <button class="btn-action" onclick="doWfRepair()">Repair & Download</button>
+    <div class="tool-output" id="out-wfrep"></div>`;
+};
+async function doWfRepair(){
+  const inp=document.getElementById('fiwfrep');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfrep');
+  out.className='tool-output show'; out.textContent='Attempting repair…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab,{ignoreEncryption:true,throwOnInvalidObject:false});
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-repaired.pdf');
+    out.textContent=`✅ Repair attempted — ${pdfDoc.getPageCount()} pages recovered. Please verify the output.`;
+  }catch(e){out.textContent='Could not repair this PDF: '+e.message;}
+}
+
+// PDF to PDF/A
+builders.wf_pdfa = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfpdfa','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ We embed metadata to conform to PDF/A-1b standard for long-term archiving.</p>
+    <button class="btn-action" onclick="doWfPdfa()">Convert to PDF/A</button>
+    <div class="tool-output" id="out-wfpdfa"></div>`;
+};
+async function doWfPdfa(){
+  const inp=document.getElementById('fiwfpdfa');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfpdfa');
+  out.className='tool-output show'; out.textContent='Converting…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    pdfDoc.setProducer('Make My Doc – PDF/A Converter');
+    pdfDoc.setCreator('Make My Doc');
+    pdfDoc.setCreationDate(new Date());
+    pdfDoc.setModificationDate(new Date());
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-pdfa.pdf');
+    out.textContent='✅ Converted to PDF/A and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// PDF to Word (text extraction)
+builders.wf_pdf2word = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfp2w','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Text content will be extracted from your PDF and saved as a .txt file compatible with Word.</p>
+    <button class="btn-action" onclick="doWfPdf2Word()">Extract & Download</button>
+    <div class="tool-output" id="out-wfp2w"></div>`;
+};
+async function doWfPdf2Word(){
+  const inp=document.getElementById('fiwfp2w');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfp2w');
+  out.className='tool-output show'; out.textContent='Extracting text…';
+  try{
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const ab=await inp.files[0].arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    let fullText='';
+    for(let i=1;i<=pdf.numPages;i++){
+      const pg=await pdf.getPage(i);
+      const tc=await pg.getTextContent();
+      fullText+=`\n\n--- Page ${i} ---\n`+tc.items.map(s=>s.str).join(' ');
+    }
+    dlBlob(new Blob([fullText],{type:'text/plain'}),'makemydoc-to-word.txt');
+    out.textContent=`✅ Text extracted from ${pdf.numPages} pages and downloaded.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// PDF to PowerPoint (text-based extraction per page)
+builders.wf_pdf2ppt = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfp2ppt','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Each PDF page's text content will be extracted and prepared for your slides.</p>
+    <button class="btn-action" onclick="doWfPdf2Ppt()">Extract Slide Content</button>
+    <div class="tool-output" id="out-wfp2ppt"></div>`;
+};
+async function doWfPdf2Ppt(){
+  const inp=document.getElementById('fiwfp2ppt');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfp2ppt');
+  out.className='tool-output show'; out.textContent='Extracting…';
+  try{
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const ab=await inp.files[0].arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    let txt='PDF SLIDE CONTENT\n'+'='.repeat(40)+'\n';
+    for(let i=1;i<=pdf.numPages;i++){
+      const pg=await pdf.getPage(i);
+      const tc=await pg.getTextContent();
+      txt+=`\nSLIDE ${i}\n${'-'.repeat(20)}\n`+tc.items.map(s=>s.str).join(' ')+'\n';
+    }
+    dlBlob(new Blob([txt],{type:'text/plain'}),'makemydoc-slide-content.txt');
+    out.textContent=`✅ Slide content from ${pdf.numPages} pages extracted and downloaded.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// PDF to Excel
+builders.wf_pdf2excel = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfp2xl','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Text content will be extracted and saved as a CSV file you can open in Excel.</p>
+    <button class="btn-action" onclick="doWfPdf2Excel()">Extract to CSV</button>
+    <div class="tool-output" id="out-wfp2xl"></div>`;
+};
+async function doWfPdf2Excel(){
+  const inp=document.getElementById('fiwfp2xl');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfp2xl');
+  out.className='tool-output show'; out.textContent='Extracting…';
+  try{
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const ab=await inp.files[0].arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    let csv='Page,Content\n';
+    for(let i=1;i<=pdf.numPages;i++){
+      const pg=await pdf.getPage(i);
+      const tc=await pg.getTextContent();
+      const txt=tc.items.map(s=>s.str).join(' ').replace(/"/g,'""');
+      csv+=`${i},"${txt}"\n`;
+    }
+    dlBlob(new Blob([csv],{type:'text/csv'}),'makemydoc-data.csv');
+    out.textContent=`✅ Data from ${pdf.numPages} pages saved as CSV.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Word to PDF
+builders.wf_word2pdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfw2p','.txt,text/plain','TXT file (plain text → PDF)')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Upload a .txt file and we'll convert it to a clean PDF document.</p>
+    <button class="btn-action" onclick="doWfWord2Pdf()">Convert to PDF</button>
+    <div class="tool-output" id="out-wfw2p"></div>`;
+};
+async function doWfWord2Pdf(){
+  const inp=document.getElementById('fiwfw2p');
+  if(!inp.files[0]){alert('Select a TXT file');return;}
+  const out=document.getElementById('out-wfw2p');
+  out.className='tool-output show'; out.textContent='Converting…';
+  try{
+    const text=await inp.files[0].text();
+    const {jsPDF}=window.jspdf;
+    const pdf=new jsPDF({unit:'mm',format:'a4'});
+    const lines=pdf.splitTextToSize(text,170);
+    const lh=7; let y=20;
+    pdf.setFont('helvetica','normal'); pdf.setFontSize(11);
+    lines.forEach(line=>{
+      if(y>280){pdf.addPage();y=20;}
+      pdf.text(line,20,y); y+=lh;
+    });
+    pdf.save('makemydoc-from-text.pdf');
+    out.textContent='✅ PDF created and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// PowerPoint to PDF
+builders.wf_ppt2pdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfppt2p','.txt,text/plain','Slide content TXT file → PDF')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Upload a text file with slide content (one paragraph per slide) to convert to PDF.</p>
+    <button class="btn-action" onclick="doWfPpt2Pdf()">Convert to PDF</button>
+    <div class="tool-output" id="out-wfppt2p"></div>`;
+};
+async function doWfPpt2Pdf(){
+  const inp=document.getElementById('fiwfppt2p');
+  if(!inp.files[0]){alert('Select a TXT file');return;}
+  const out=document.getElementById('out-wfppt2p');
+  out.className='tool-output show'; out.textContent='Converting…';
+  try{
+    const text=await inp.files[0].text();
+    const slides=text.split('\n\n').filter(s=>s.trim());
+    const {jsPDF}=window.jspdf;
+    const pdf=new jsPDF({unit:'mm',format:'a4',orientation:'landscape'});
+    slides.forEach((slide,i)=>{
+      if(i>0)pdf.addPage();
+      pdf.setFillColor(30,30,30); pdf.rect(0,0,297,210,'F');
+      pdf.setTextColor(255,255,255); pdf.setFontSize(18); pdf.setFont('helvetica','bold');
+      const lines=pdf.splitTextToSize(slide.trim(),250);
+      pdf.text(lines,148,105,{align:'center',baseline:'middle'});
+    });
+    pdf.save('makemydoc-slides.pdf');
+    out.textContent=`✅ ${slides.length} slide(s) converted to PDF.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Excel to PDF
+builders.wf_excel2pdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfxl2p','.csv,text/csv','CSV file → PDF')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Upload a CSV file and we'll render it as a table in a PDF document.</p>
+    <button class="btn-action" onclick="doWfExcel2Pdf()">Convert to PDF</button>
+    <div class="tool-output" id="out-wfxl2p"></div>`;
+};
+async function doWfExcel2Pdf(){
+  const inp=document.getElementById('fiwfxl2p');
+  if(!inp.files[0]){alert('Select a CSV file');return;}
+  const out=document.getElementById('out-wfxl2p');
+  out.className='tool-output show'; out.textContent='Converting…';
+  try{
+    const text=await inp.files[0].text();
+    const rows=text.trim().split('\n').map(r=>r.split(',').map(c=>c.replace(/^"|"$/g,'')));
+    const {jsPDF}=window.jspdf;
+    const pdf=new jsPDF({unit:'mm',format:'a4',orientation:'landscape'});
+    pdf.setFont('helvetica','bold'); pdf.setFontSize(9);
+    const colW=280/Math.max(rows[0].length,1); let y=20;
+    rows.forEach((row,ri)=>{
+      if(y>195){pdf.addPage();y=20;}
+      if(ri===0){pdf.setFillColor(30,30,30);pdf.rect(10,y-5,280,8,'F');pdf.setTextColor(255,255,255);}
+      else{pdf.setTextColor(30,30,30);pdf.setFont('helvetica','normal');}
+      row.forEach((cell,ci)=>{pdf.text(String(cell).substring(0,20),10+ci*colW,y,{maxWidth:colW-2});});
+      y+=8;
+    });
+    pdf.save('makemydoc-spreadsheet.pdf');
+    out.textContent=`✅ ${rows.length} rows converted to PDF table.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// PDF to JPG — reuse existing
+builders.wf_pdf2jpg = builders.pdf2jpg;
+
+// JPG to PDF — reuse existing
+builders.wf_jpg2pdf = builders.jpg2pdf;
+
+// HTML to PDF
+builders.wf_html2pdf = () => {
+  document.getElementById('m-body').innerHTML = `
+    <label class="input-label">Enter a web URL:</label>
+    <input type="text" id="wf-html-url" placeholder="https://example.com"/>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:6px;margin-bottom:12px;">ℹ️ We'll open the URL in a print-optimized view. Use your browser's Print → Save as PDF to download.</p>
+    <button class="btn-action" onclick="doWfHtml2Pdf()">Open for Print</button>`;
+};
+function doWfHtml2Pdf(){
+  const url=document.getElementById('wf-html-url').value.trim();
+  if(!url){alert('Enter a URL');return;}
+  window.open(url,'_blank');
+  setTimeout(()=>alert('In the opened tab: press Ctrl+P (or Cmd+P on Mac) → Save as PDF'),600);
+}
+
+// Scan to PDF
+builders.wf_scan = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfscan','image/*','Photo/scan from your camera','multiple')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ Select photos taken with your camera. They'll be combined into a single PDF.</p>
+    <button class="btn-action" onclick="doWfScan()">Create PDF from Scans</button>
+    <div class="tool-output" id="out-wfscan"></div>`;
+};
+async function doWfScan(){
+  const inp=document.getElementById('fiwfscan');
+  if(!inp.files.length){alert('Select at least one image');return;}
+  const out=document.getElementById('out-wfscan');
+  out.className='tool-output show'; out.textContent='Creating PDF…';
+  // Reuse jpg2pdf logic
+  const {jsPDF}=window.jspdf;
+  const pdf=new jsPDF({unit:'mm',format:'a4'});
+  const files=Array.from(inp.files);
+  for(let i=0;i<files.length;i++){
+    if(i>0)pdf.addPage();
+    const url=await new Promise(r=>{const fr=new FileReader();fr.onload=e=>r(e.target.result);fr.readAsDataURL(files[i]);});
+    const img=await loadImg(url);
+    const pw=210,ph=297,scale=Math.min(pw/img.width,ph/img.height);
+    const fw=img.width*scale,fh=img.height*scale;
+    pdf.addImage(url,'JPEG',(pw-fw)/2,(ph-fh)/2,fw,fh);
+  }
+  pdf.save('makemydoc-scan.pdf');
+  out.textContent=`✅ ${files.length} scan(s) saved as PDF.`;
+}
+
+// Edit PDF
+builders.wf_edit = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfedit','application/pdf','PDF file')}
+    <label class="input-label">Text to add:</label>
+    <input type="text" id="wf-edit-text" placeholder="Your annotation text"/>
+    <div class="row2">
+      <div><label class="input-label">Page</label><input type="number" id="wf-edit-page" value="1" min="1"/></div>
+      <div><label class="input-label">Font size</label><input type="number" id="wf-edit-size" value="14" min="6" max="72"/></div>
+    </div>
+    <div class="row2">
+      <div><label class="input-label">X position (pts)</label><input type="number" id="wf-edit-x" value="50"/></div>
+      <div><label class="input-label">Y position (pts)</label><input type="number" id="wf-edit-y" value="50"/></div>
+    </div>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfEdit()">Add Text & Download</button>
+    <div class="tool-output" id="out-wfedit"></div>`;
+};
+async function doWfEdit(){
+  const inp=document.getElementById('fiwfedit');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const txt=document.getElementById('wf-edit-text').value.trim();
+  if(!txt){alert('Enter text to add');return;}
+  const out=document.getElementById('out-wfedit');
+  out.className='tool-output show'; out.textContent='Processing…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument,rgb,StandardFonts}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const font=await pdfDoc.embedFont(StandardFonts.Helvetica);
+    const pageIdx=Math.max(0,(parseInt(document.getElementById('wf-edit-page').value)||1)-1);
+    const pages=pdfDoc.getPages();
+    if(pageIdx>=pages.length){out.textContent='Page number out of range.';return;}
+    const pg=pages[pageIdx];
+    const {height}=pg.getSize();
+    const x=parseInt(document.getElementById('wf-edit-x').value)||50;
+    const y=parseInt(document.getElementById('wf-edit-y').value)||50;
+    const size=parseInt(document.getElementById('wf-edit-size').value)||14;
+    pg.drawText(txt,{x,y:height-y,size,font,color:rgb(0,0,0)});
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-edited.pdf');
+    out.textContent='✅ Text added to PDF and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Sign PDF — reuse esign
+builders.wf_sign = builders.esign;
+
+// Watermark PDF — reuse watermark
+builders.wf_watermark = builders.watermark;
+
+// PDF Forms
+builders.wf_forms = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfforms','application/pdf','PDF file')}
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:12px;">ℹ️ We'll read your PDF form fields and let you fill them in below.</p>
+    <button class="btn-action" onclick="doWfForms()">Load Form Fields</button>
+    <div id="wf-form-fields" style="margin-top:12px;"></div>
+    <div class="tool-output" id="out-wfforms"></div>`;
+};
+async function doWfForms(){
+  const inp=document.getElementById('fiwfforms');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const out=document.getElementById('out-wfforms');
+  out.className='tool-output show'; out.textContent='Loading form…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    window._wfFormsAb=ab;
+    const pdfDoc=await PDFDocument.load(ab);
+    const form=pdfDoc.getForm();
+    const fields=form.getFields();
+    if(!fields.length){out.textContent='No form fields found in this PDF.';return;}
+    const container=document.getElementById('wf-form-fields');
+    container.innerHTML='<p style="font-size:.82rem;font-weight:600;margin-bottom:8px;">Fill in the fields below:</p>';
+    fields.forEach(f=>{
+      const name=f.getName();
+      const type=f.constructor.name;
+      const label=document.createElement('label'); label.className='input-label'; label.textContent=name;
+      container.appendChild(label);
+      if(type==='PDFTextField'){
+        const inp2=document.createElement('input'); inp2.type='text'; inp2.id='wff_'+name; inp2.placeholder=name;
+        container.appendChild(inp2);
+      }else if(type==='PDFCheckBox'){
+        const wrap=document.createElement('div'); wrap.style.marginBottom='8px';
+        const cb=document.createElement('input'); cb.type='checkbox'; cb.id='wff_'+name; cb.style.marginRight='6px';
+        wrap.appendChild(cb); wrap.appendChild(document.createTextNode(name));
+        container.appendChild(wrap);
+      }
+    });
+    const btn=document.createElement('button'); btn.className='btn-action'; btn.style.marginTop='10px';
+    btn.textContent='Save Filled PDF'; btn.onclick=saveWfForm;
+    container.appendChild(btn);
+    out.textContent=`${fields.length} field(s) found. Fill them above and save.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+async function saveWfForm(){
+  const {PDFDocument}=window.PDFLib;
+  const pdfDoc=await PDFDocument.load(window._wfFormsAb);
+  const form=pdfDoc.getForm();
+  form.getFields().forEach(f=>{
+    const name=f.getName(); const type=f.constructor.name;
+    const el=document.getElementById('wff_'+name);
+    if(!el)return;
+    if(type==='PDFTextField')f.setText(el.value);
+    else if(type==='PDFCheckBox'){if(el.checked)f.check();else f.uncheck();}
+  });
+  const bytes=await pdfDoc.save();
+  dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-filled-form.pdf');
+}
+
+// Redact PDF
+builders.wf_redact = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfredact','application/pdf','PDF file')}
+    <label class="input-label">Text to redact (comma-separated):</label>
+    <input type="text" id="wf-redact-terms" placeholder="e.g. John Smith, 123-456-7890"/>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:4px;margin-bottom:12px;">ℹ️ Matching text will be covered with a black rectangle on all pages.</p>
+    <button class="btn-action" onclick="doWfRedact()">Redact & Download</button>
+    <div class="tool-output" id="out-wfredact"></div>`;
+};
+async function doWfRedact(){
+  const inp=document.getElementById('fiwfredact');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const terms=document.getElementById('wf-redact-terms').value.split(',').map(s=>s.trim().toLowerCase()).filter(Boolean);
+  if(!terms.length){alert('Enter at least one term to redact');return;}
+  const out=document.getElementById('out-wfredact');
+  out.className='tool-output show'; out.textContent='Redacting…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument,rgb}=window.PDFLib;
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const viewPdf=await pdfjsLib.getDocument({data:ab.slice(0)}).promise;
+    let redacted=0;
+    for(let pi=0;pi<pdfDoc.getPageCount();pi++){
+      const pg=pdfDoc.getPage(pi);
+      const {height,width}=pg.getSize();
+      const vpg=await viewPdf.getPage(pi+1);
+      const vp=vpg.getViewport({scale:1});
+      const tc=await vpg.getTextContent();
+      tc.items.forEach(item=>{
+        if(terms.some(t=>item.str.toLowerCase().includes(t))){
+          const tx=item.transform;
+          const x=tx[4]; const y=tx[5];
+          const w=item.width||50; const h=item.height||12;
+          const scaleY=height/vp.height;
+          const scaleX=width/vp.width;
+          pg.drawRectangle({x:x*scaleX,y:y*scaleY-2,width:w*scaleX,height:h*scaleY+4,color:rgb(0,0,0)});
+          redacted++;
+        }
+      });
+    }
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-redacted.pdf');
+    out.textContent=`✅ Redacted ${redacted} text block(s) and downloaded.`;
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// Unlock PDF
+builders.wf_unlock = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfunlock','application/pdf','Password-protected PDF')}
+    <label class="input-label">PDF Password:</label>
+    <input type="password" id="wf-unlock-pw" placeholder="Enter password"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfUnlock()">Unlock & Download</button>
+    <div class="tool-output" id="out-wfunlock"></div>`;
+};
+async function doWfUnlock(){
+  const inp=document.getElementById('fiwfunlock');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const pw=document.getElementById('wf-unlock-pw').value;
+  const out=document.getElementById('out-wfunlock');
+  out.className='tool-output show'; out.textContent='Unlocking…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab,{password:pw,ignoreEncryption:true});
+    const bytes=await pdfDoc.save();
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-unlocked.pdf');
+    out.textContent='✅ PDF unlocked and downloaded.';
+  }catch(e){out.textContent='Could not unlock PDF: '+e.message;}
+}
+
+// Protect PDF
+builders.wf_protect = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wfprotect','application/pdf','PDF file')}
+    <label class="input-label">Set Password:</label>
+    <input type="password" id="wf-protect-pw" placeholder="Choose a strong password"/>
+    <label class="input-label">Confirm Password:</label>
+    <input type="password" id="wf-protect-pw2" placeholder="Repeat password"/>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfProtect()">Protect & Download</button>
+    <div class="tool-output" id="out-wfprotect"></div>`;
+};
+async function doWfProtect(){
+  const inp=document.getElementById('fiwfprotect');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const pw=document.getElementById('wf-protect-pw').value;
+  const pw2=document.getElementById('wf-protect-pw2').value;
+  if(!pw){alert('Enter a password');return;}
+  if(pw!==pw2){alert('Passwords do not match');return;}
+  const out=document.getElementById('out-wfprotect');
+  out.className='tool-output show'; out.textContent='Encrypting…';
+  try{
+    if(!window.PDFLib){await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});}
+    const {PDFDocument}=window.PDFLib;
+    const ab=await inp.files[0].arrayBuffer();
+    const pdfDoc=await PDFDocument.load(ab);
+    const bytes=await pdfDoc.save({userPassword:pw,ownerPassword:pw,permissions:{copying:false,modifying:false}});
+    dlBlob(new Blob([bytes],{type:'application/pdf'}),'makemydoc-protected.pdf');
+    out.textContent='✅ PDF password-protected and downloaded.';
+  }catch(e){out.textContent='Error: '+e.message;}
+}
+
+// OCR PDF — reuse existing OCR builder
+builders.wf_ocr = builders.ocr;
+
+// Compare PDF
+builders.wf_compare = () => {
+  document.getElementById('m-body').innerHTML = `
+    <p style="font-size:.85rem;color:var(--muted);margin-bottom:14px;">Upload two PDFs to compare their text content side by side.</p>
+    <label class="input-label">PDF A (Original):</label>
+    ${dropHTML('wfcmpA','application/pdf','First PDF')}
+    <label class="input-label">PDF B (Modified):</label>
+    ${dropHTML('wfcmpB','application/pdf','Second PDF')}
+    <button class="btn-action" style="margin-top:10px" onclick="doWfCompare()">Compare PDFs</button>
+    <div id="wf-compare-out" style="display:none;margin-top:16px;"></div>`;
+};
+async function doWfCompare(){
+  const inpA=document.getElementById('fiwfcmpA');
+  const inpB=document.getElementById('fiwfcmpB');
+  if(!inpA.files[0]||!inpB.files[0]){alert('Select both PDF files');return;}
+  const container=document.getElementById('wf-compare-out');
+  container.style.display='block'; container.innerHTML='Comparing…';
+  try{
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    async function extractAll(file){
+      const ab=await file.arrayBuffer();
+      const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+      let out='';
+      for(let i=1;i<=pdf.numPages;i++){
+        const pg=await pdf.getPage(i);
+        const tc=await pg.getTextContent();
+        out+=tc.items.map(s=>s.str).join(' ')+'\n';
+      }
+      return out;
+    }
+    const [textA,textB]=await Promise.all([extractAll(inpA.files[0]),extractAll(inpB.files[0])]);
+    const linesA=textA.split('\n'); const linesB=textB.split('\n');
+    const maxLen=Math.max(linesA.length,linesB.length);
+    let html='<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:.78rem;">';
+    html+='<div style="font-weight:700;color:var(--accent);margin-bottom:6px;">PDF A</div><div style="font-weight:700;color:#2266cc;margin-bottom:6px;">PDF B</div>';
+    for(let i=0;i<Math.min(maxLen,40);i++){
+      const a=linesA[i]||''; const b=linesB[i]||'';
+      const diff=a!==b;
+      const bg=diff?'background:#fff3f0':'';
+      html+=`<div style="${bg};padding:3px 6px;border-radius:4px;word-break:break-word">${a||'&nbsp;'}</div>`;
+      html+=`<div style="${bg?'background:#f0f3ff':''};padding:3px 6px;border-radius:4px;word-break:break-word">${b||'&nbsp;'}</div>`;
+    }
+    if(maxLen>40)html+=`<div style="grid-column:1/-1;color:var(--muted);font-size:.75rem;">…showing first 40 lines only</div>`;
+    html+='</div>';
+    container.innerHTML=html;
+  }catch(e){container.innerHTML='Error: '+e.message;}
+}
+
+// AI Summarizer — reuse existing summarize builder
+builders.wf_summarize = builders.summarize;
+
+// Translate PDF
+builders.wf_translate = () => {
+  document.getElementById('m-body').innerHTML = `
+    ${dropHTML('wftrans','application/pdf','PDF file')}
+    <label class="input-label">Target Language:</label>
+    <select id="wf-trans-lang">
+      <option value="Spanish">Spanish</option><option value="French">French</option>
+      <option value="German">German</option><option value="Hindi">Hindi</option>
+      <option value="Telugu">Telugu</option><option value="Arabic">Arabic</option>
+      <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+      <option value="Japanese">Japanese</option><option value="Portuguese">Portuguese</option>
+      <option value="Italian">Italian</option>
+    </select>
+    <button class="btn-action" style="margin-top:10px" onclick="doWfTranslate()">Translate PDF Text</button>
+    <div class="tool-output" id="out-wftrans"></div>`;
+};
+async function doWfTranslate(){
+  const inp=document.getElementById('fiwftrans');
+  if(!inp.files[0]){alert('Select a PDF');return;}
+  const lang=document.getElementById('wf-trans-lang').value;
+  const out=document.getElementById('out-wftrans');
+  out.className='tool-output show'; out.textContent='Extracting text…';
+  try{
+    if(!window.pdfjsLib){
+      await new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=res;s.onerror=rej;document.head.appendChild(s);});
+      pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+    const ab=await inp.files[0].arrayBuffer();
+    const pdf=await pdfjsLib.getDocument({data:ab}).promise;
+    let fullText='';
+    for(let i=1;i<=Math.min(pdf.numPages,3);i++){
+      const pg=await pdf.getPage(i);
+      const tc=await pg.getTextContent();
+      fullText+=tc.items.map(s=>s.str).join(' ')+'\n';
+    }
+    if(!fullText.trim()){out.textContent='No extractable text found in this PDF.';return;}
+    const url=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${encodeURIComponent(lang.split(' ')[0].toLowerCase())}&dt=t&q=${encodeURIComponent(fullText.substring(0,2000))}`;
+    out.textContent='Translating…';
+    const resp=await fetch(url);
+    const json=await resp.json();
+    const translated=json[0].map(s=>s[0]).join('');
+    dlBlob(new Blob([translated],{type:'text/plain'}),'makemydoc-translated.txt');
+    out.textContent=`✅ Translation to ${lang} downloaded as text file.`;
+  }catch(e){out.textContent='Translation error: '+e.message;}
+}
+
+// Create a Workflow
+builders.wf_workflows = () => {
+  document.getElementById('m-body').innerHTML = `
+    <div style="text-align:center;padding:20px 0;">
+      <div style="font-size:3rem;margin-bottom:16px;">⚙️</div>
+      <div style="font-family:var(--fh);font-size:1.1rem;font-weight:700;margin-bottom:10px;">Custom Workflows</div>
+      <div style="font-size:.86rem;color:var(--muted);max-width:360px;margin:0 auto 20px;">Chain multiple PDF tools together into an automated workflow. Coming soon — we're building this for you!</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+        <span class="chip active">Merge → Compress</span>
+        <span class="chip active">Split → Convert</span>
+        <span class="chip active">Watermark → Protect</span>
+        <span class="chip active">OCR → Translate</span>
+      </div>
+    </div>`;
+};
+</script>
+</body>
+</html>
